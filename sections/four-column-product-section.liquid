@@ -14,85 +14,43 @@
 
 
 {% if section.settings.collection != blank %}
-  <div class="five-column-product-slider    section-{{ section.id }}-padding {% if section.settings.hidehrline %}  hide-bottom-hr {% endif %} "  {% if section.settings.sectionID != blank %} id="{{ section.settings.sectionID }}"    {% endif %}>
-    <div class="container-1440">
-      {% if section.settings.buttonText != blank or section.settings.title != blank %}
-        <div
-          class="top-section flex"
-        >
+  <div class="four-column-product-section    section-{{ section.id }}-padding {% if section.settings.hidehrline %}  hide-bottom-hr {% endif %} "  {% if section.settings.sectionID != blank %} id="{{ section.settings.sectionID }}"    {% endif %}>
+    <div class="container-1320">
+    
           {% if section.settings.title != blank %}
             <h2 class="{{section.settings.text_size}}">
               {{ section.settings.title }}
             </h2>
           {% endif %}
-          {% if section.settings.buttonText != blank %}
-            <a
-              class="btn--primary"
-              href="{{ section.settings.buttonLink }}"
-              title="Read More About {{ section.settings.buttonText }}"
-              aria-label="Read More About {{ section.settings.buttonText }}"
-            >
-              {{- section.settings.buttonText -}}
-            </a>
-          {% endif %}
-        </div>
-      {% endif %}
-      <div class="slider-outer">
-        <div class="swiper js_five-column-product-slider-{{ section.settings.sectionID }}">
-          <div class="swiper-wrapper">
+         
+      
+     
+       
+          <ul>
            {%- assign collection = collections[section.settings.collection] -%}
             {% for productRelated in collection.products %}
              
 
               {% if productRelated != blank %}
-                <div class=" swiper-slide product-card">
+                <li class="product-card">
                   {% include 'product_Card'  with  productRelated: productRelated , show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
-                </div>
+                </li>
               {% endif %}
             {% endfor %}
-          </div>
-        </div>
-
-        <div class="swiper-button-prev swiper-button-prev-product-{{ section.settings.sectionID }}"></div>
-        <div class="swiper-button-next swiper-button-next-product-{{ section.settings.sectionID }}"></div>
-        
-      </div>
+          </ul>
+       
+      
     </div>
   </div>
 
     
 {%- endif -%}
 
-<script>
-  jQuery(function () {
-    var swiper = new Swiper('.js_five-column-product-slider-{{ section.settings.sectionID }}', {
-      slidesPerView: 1,
-      spaceBetween:10,
-      navigation: {
-        nextEl: '.swiper-button-next-product-{{ section.settings.sectionID }}',
-        prevEl: '.swiper-button-prev-product-{{ section.settings.sectionID }}',
-      },
-      breakpoints: {
-        481: {
-          slidesPerView: 2,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        981: {
-          slidesPerView: 4,
-        },
-        1101: {
-          slidesPerView: 5,
-        },
-      },
-    });
-  });
-</script>
+
 
 {% schema %}
 {
-  "name": "5 Col Product Slider",
+  "name": "4 Col Product Section",
   "tag": "section",
   "settings": [
     {
@@ -111,44 +69,15 @@
       "info": "Enter the main heading for your product slider (e.g., 'Featured Products', 'You May Also Like', 'Complete Your Collection'). This title appears above the product carousel and provides context for the products displayed."
     },
     {
-      "type": "select",
-      "id": "text_size",
-      "label": "Title Size",
-      "default": "h2",
-      "info": "Choose the size of the section title. Larger sizes work well for main headings, while smaller sizes are better for subheadings or when space is limited.",
-      "options": [
-        {
-          "value": "h4",
-          "label": "Small (H4)"
-        },
-        {
-          "value": "h3",
-          "label": "Medium (H3)"
-        },
-        {
-          "value": "h2",
-          "label": "Large (H2)"
-        }
-      ]
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
     },
      {
           "type": "collection",
           "id": "collection",
           "label": "Collection"
     },
-    {
-      "type": "text",
-      "id": "buttonText",
-      "label": "Button Text",
-      "info": "Enter the text for the optional call-to-action button (e.g., 'View All Products', 'Shop Collection', 'Browse More'). This button appears next to the section title and links to a collection or category page."
-    },
-    {
-      "type": "url",
-      "id": "buttonLink",
-      "label": "Button Link URL",
-      "info": "Enter the URL where the call-to-action button should navigate. This could be your main collection page, a specific product category, or a filtered product page (e.g., '/collections/all' or '/collections/featured')."
-    },
-
     {
       "type": "header",
       "content": "📏 Section Spacing & Layout"
