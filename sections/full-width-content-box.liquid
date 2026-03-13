@@ -18,7 +18,7 @@
     {%  endcomment %}
 {%- endstyle -%}
 
-{% if section.settings.description != blank and section.settings.title1 != blank %}
+{% if section.settings.description != blank and section.settings.title != blank %}
   <div
     class="full-width-content-box"
     data-aos="fade-up"
@@ -26,17 +26,23 @@
   >
     <div class="container-1320">
       <div class="box">
-      <div class="content full-format">
+      <div class="content ">
         {% if section.settings.title != blank %}
           <h2>
             {{ section.settings.title }}
            
           </h2>
         {% endif %}
-
+        {% if section.settings.subtitle != blank %}
+          <p class="subtitle">
+            {{ section.settings.subtitle }}
+           
+          </p>
+         {% endif %}
+<div class="full-format">
         {{ section.settings.description }}
 
-       
+       </div>
       </div>
       </div>
     </div>
