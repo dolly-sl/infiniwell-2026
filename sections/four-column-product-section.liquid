@@ -22,8 +22,12 @@
               {{ section.settings.title }}
             </h2>
           {% endif %}
-         
-      
+           {% if section.settings.description != blank %}
+           <div class="description">
+        {{ section.settings.description }}
+
+       </div>
+        {% endif %}
      
        
           <ul>
