@@ -500,9 +500,14 @@ letter-spacing: 0.105px !important;
 .four-column-product-section .product-card .image-section a{
 position: initial;  
 }
+.four-column-product-section .description{
+  margin-top: 10px;
+}
 .four-column-product-section{
   position: relative;
 }
+
+
 
 .four-column-product-section::before{
     content: "";
