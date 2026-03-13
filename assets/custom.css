@@ -446,3 +446,6 @@ p#shopify-pc__banner__body-title {
 .full-width-content.v2 .full-format li{
   margin-bottom: 0 !important;
 }
+.full-width-content.v2 .full-format ul:last-child{
+  margin-bottom: 0 !important;
+}
