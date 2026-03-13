@@ -466,6 +466,11 @@ p#shopify-pc__banner__body-title {
   background: #ffffff;
 border-radius: 20px;
 }
+@media only screen and (max-width:768px){
+  .full-width-content-box .box{
+  padding: 30px;
+}
+}
 .full-width-content-box .full-format h6{
 padding-bottom: 12px !important;
 }
