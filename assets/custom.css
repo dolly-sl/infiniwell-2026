@@ -471,7 +471,12 @@ border-radius: 20px;
   padding: 20px;
   margin-bottom: 20px;
 }
-
+.full-width-content-box .full-format p,
+.full-width-content-box .full-format p li{
+  font-size: 14px !important;
+  line-height: 160% !important;
+letter-spacing: 0.105px !important;
+}
 .full-width-content-box .full-format p{
   padding-bottom: 0 !important;
   padding-top: 10px !important;
