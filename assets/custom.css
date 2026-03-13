@@ -534,14 +534,14 @@ position: initial;
   width: calc(100% + 20px);
   margin-left: -20px;
   margin-bottom: -50px;
-  margin-top: 40px;
+  margin-top: 32px;
   
 }
 
 @media only screen and (max-width:768px){
   .four-column-product-section-v2 .product-list{
  
-  margin-top: 30px;
+  margin-top: 24px;
   
 }
 }
