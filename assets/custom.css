@@ -428,6 +428,11 @@ p#shopify-pc__banner__body-title {
   padding: 60px 0 !important;
   background: linear-gradient(180deg, rgba(237, 236, 236, 0.15) 0%, rgba(237, 236, 236, 0.00) 100%), #FFF;
 }
+@media only screen and (max-width:768px){
+  .full-width-content.v2{
+  padding: 30px 0 !important;
+}
+}
 .full-width-content.v2 h1{
   font-weight: 400 !important;
   padding-bottom: 8px !important;
