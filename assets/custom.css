@@ -571,7 +571,7 @@ position: initial;
     content: "";
     position: absolute;
     height: 1px;
-    width: calc(100% - 30px);
+    width: calc(100% - 20px);
     max-width: 1260px;
     margin: 0 auto;
     right: 0;
