@@ -1,0 +1,155 @@
+{%- style -%}
+  .section-{{ section.id }}-padding{
+      padding-top: {{ section.settings.paddingtop | round: 0 }}px !important;
+      padding-bottom: {{ section.settings.paddingbottom | round: 0 }}px !important;
+    }
+
+    @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding{
+      padding-top: {{ section.settings.paddingtopmobile | round: 0 }}px !important;
+      padding-bottom: {{ section.settings.paddingbottomMobile | round: 0 }}px !important;
+    }
+  }
+{%- endstyle -%}
+
+
+{% if section.settings.collection != blank %}
+  <div class="four-column-product-section-v2    section-{{ section.id }}-padding {% if section.settings.hidehrline %}  hide-bottom-hr {% endif %} "  {% if section.settings.sectionID != blank %} id="{{ section.settings.sectionID }}"    {% endif %}>
+    <div class="container-1300">
+    
+          {% if section.settings.title != blank %}
+            <h2 class="h3">
+              {{ section.settings.title }}
+            </h2>
+          {% endif %}
+           {% if section.settings.description != blank %}
+           <div class="description">
+        {{ section.settings.description }}
+
+       </div>
+        {% endif %}
+     
+       
+          <ul class="product-list flex-wrap">
+           {%- assign collection = collections[section.settings.collection] -%}
+            {% for productRelated in collection.products %}
+             
+
+              {% if productRelated != blank %}
+                <li class="product-card">
+                  {% include 'product_card'  with  productRelated: productRelated , show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
+          </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+       
+      
+    </div>
+  </div>
+
+    
+{%- endif -%}
+
+
+
+{% schema %}
+{
+  "name": "4 Col Product Section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "📦 Product Slider Content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Configure the header section that appears above the product slider. This slider displays up to 20 products in a responsive carousel layout (4 columns on desktop, 3 on tablet, 2 on large mobile, 1 on small mobile)."
+    },
+   
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "info": "Enter the main heading for your product slider (e.g., 'Featured Products', 'You May Also Like', 'Complete Your Collection'). This title appears above the product carousel and provides context for the products displayed."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+     {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+    },
+    {
+      "type": "header",
+      "content": "📏 Section Spacing & Layout"
+    },
+    {
+      "type": "paragraph",
+      "content": "Control the vertical spacing around the product slider to ensure proper visual separation from other page elements on both desktop and mobile devices."
+    },
+    {
+      "type": "range",
+      "id": "paddingtop",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "label": "Top Spacing (Desktop)",
+      "info": "Adjust the space above the product slider on desktop devices. Use this to create proper visual separation from content above it.",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "paddingtopmobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Top Spacing (Mobile)",
+      "info": "Adjust the space above this section on mobile devices. Mobile spacing is typically smaller than desktop to optimize screen space.",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "paddingbottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom Spacing (Desktop)",
+      "info": "Adjust the space below the product slider on desktop devices. Use this to create proper visual separation from content below it.",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "paddingbottomMobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom Spacing (Mobile)",
+      "info": "Adjust the space below this section on mobile devices. Mobile spacing is typically smaller than desktop to optimize screen space.",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Dev Settings (For Theme Developers)"
+    },
+    {
+          "type": "checkbox",
+          "id": "hidehrline",
+          "label": "Hide Bottom HR Line",
+          "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Four Column Product Section",
+      "category": "Product Showcase"
+    }
+  ]
+}
+{% endschema %}

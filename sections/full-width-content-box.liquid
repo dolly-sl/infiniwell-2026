@@ -1,0 +1,83 @@
+{%- style -%}
+{%  comment %}
+  .section-{{ section.id }}-padding-top{
+      padding-top: {{ section.settings.paddingtop | round: 0 }}px;
+    }
+    .section-{{ section.id }}-padding-bottom{
+      padding-bottom: {{ section.settings.paddingbottom | round: 0 }}px;
+    }
+    @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding-top{
+      padding-top: {{ section.settings.paddingtopmobile | round: 0 }}px;
+
+    }
+    .section-{{ section.id }}-padding-bottom{
+      padding-bottom: {{ section.settings.paddingbottommobile | round: 0 }}px;
+    }
+  }
+    {%  endcomment %}
+{%- endstyle -%}
+
+{% if section.settings.description != blank and section.settings.title != blank %}
+  <div
+    class="full-width-content-box"
+    data-aos="fade-up"
+    data-aos-duration="2000"
+  >
+    <div class="container-1300">
+      <div class="box">
+      <div class="content ">
+        {% if section.settings.title != blank %}
+          <h2>
+            {{ section.settings.title }}
+           
+          </h2>
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <p class="subtitle">
+            {{ section.settings.subtitle }}
+           
+          </p>
+         {% endif %}
+<div class="full-format">
+        {{ section.settings.description }}
+
+       </div>
+      </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Full Width Content Box",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+    
+  ],
+
+  "presets": [
+    {
+      "name": "Full Width Content Box"
+    }
+  ]
+}
+{% endschema %}
