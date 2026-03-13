@@ -492,3 +492,11 @@ letter-spacing: 0.105px !important;
 .full-width-content-box .full-format ul:last-child{
   padding-bottom: 0 !important;
 }
+
+
+
+
+/*four-column-product-section*/
+.four-column-product-section .product-card .image-section a{
+position: initial;  
+}
