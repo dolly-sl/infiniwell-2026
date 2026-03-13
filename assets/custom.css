@@ -507,13 +507,14 @@ position: initial;
   position: relative;
 }
 
-.four-column-product-section ul{
+.four-column-product-section .product-list{
   width: calc(100% + 20px);
   margin-left: -20px;
   margin-bottom: -50px;
+  margin-top: 40px;
   
 }
-.four-column-product-section ul li{
+.four-column-product-section .product-list li.product-card{
   width: calc(25% - 20px);
   margin-left: 20px;
   margin-bottom: 50px;
