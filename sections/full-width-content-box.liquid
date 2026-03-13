@@ -25,6 +25,7 @@
     data-aos-duration="2000"
   >
     <div class="container-1320">
+      <div class="box">
       <div class="content full-format">
         {% if section.settings.title1 != blank %}
           <h1>
@@ -37,23 +38,15 @@
 
         {{ section.settings.description }}
 
-        {% if section.settings.buttonText != blank %}
-          <a
-            href="{{ section.settings.buttonLink }}"
-            title="Read More About {{ section.settings.buttonText }}"
-            aria-label="Read More About {{ section.settings.buttonText }}"
-            class="btn--primary m-t-15"
-          >
-            {{- section.settings.buttonText -}}
-          </a>
-        {% endif %}
+       
+      </div>
       </div>
     </div>
   </div>
 {% endif %}
 {% schema %}
 {
-  "name": "Full Width Content v2",
+  "name": "Full Width Content Box",
   "settings": [
     {
       "type": "header",
@@ -73,67 +66,13 @@
       "type": "richtext",
       "id": "description",
       "label": "Description"
-    },
-    {
-      "type": "text",
-      "id": "buttonText",
-      "label": "Button Text"
-    },
-    {
-      "type": "url",
-      "id": "buttonLink",
-      "label": "Button Link"
-    },
-    {
-      "type": "header",
-      "content": "Extra Settings",
-      "info": "Recommened to be used by the developer only"
-    },
-    {
-      "type": "range",
-      "id": "paddingtop",
-      "min": 0,
-      "max": 140,
-      "step": 2,
-      "unit": "px",
-      "label": "Padding top (Desktop)",
-      "default": 90
-    },
-    {
-      "type": "range",
-      "id": "paddingtopmobile",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Padding top (Mobile)",
-      "default": 80
-    },
-    {
-      "type": "range",
-      "id": "paddingbottom",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Padding Bottom (Desktop)",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "paddingbottommobile",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "unit": "px",
-      "label": "Padding Bottom (Mobile)",
-      "default": 0
     }
+    
   ],
 
   "presets": [
     {
-      "name": "Full Width Content v2"
+      "name": "Full Width Content Box"
     }
   ]
 }
