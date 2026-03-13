@@ -456,6 +456,11 @@ p#shopify-pc__banner__body-title {
   padding: 40px 0 0;
 }
 
+.full-width-content-box h2{
+  font-weight: 400 !important;
+  margin-bottom: 10px !important;
+}
+
 .full-width-content-box .box{
   padding: 50px 60px;
   background: #ffffff;
