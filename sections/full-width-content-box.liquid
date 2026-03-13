@@ -27,12 +27,10 @@
     <div class="container-1320">
       <div class="box">
       <div class="content full-format">
-        {% if section.settings.title1 != blank %}
+        {% if section.settings.title != blank %}
           <h2>
-            {{ section.settings.title1 }}
-            {% if section.settings.title2 != blank %}
-              <span class="color-grey h2">{{ section.settings.title2 }}</span>
-            {% endif %}
+            {{ section.settings.title }}
+           
           </h2>
         {% endif %}
 
@@ -55,12 +53,7 @@
     {
       "type": "text",
       "id": "title1",
-      "label": "Title (Black)"
-    },
-    {
-      "type": "text",
-      "id": "title2",
-      "label": "Title (Grey)"
+      "label": "Title"
     },
     {
       "type": "richtext",
