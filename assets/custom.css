@@ -493,12 +493,19 @@ letter-spacing: 0.105px !important;
   padding-bottom: 0 !important;
 }
 
+.full-width-content-box .container-1300{
+  padding: 0 20px;
+}
+
 
 
 
 /*four-column-product-section-v2*/
 .four-column-product-section-v2 .product-card .image-section a{
 position: initial;  
+}
+.four-column-product-section-v2 .container-1300{
+  padding: 0 20px;
 }
 .four-column-product-section-v2 .description{
   margin-top: 10px;
