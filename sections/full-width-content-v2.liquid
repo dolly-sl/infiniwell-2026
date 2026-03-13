@@ -27,12 +27,12 @@
     <div class="container-1320">
       <div class="content full-format">
         {% if section.settings.title1 != blank %}
-          <h2>
+          <h1>
             {{ section.settings.title1 }}
             {% if section.settings.title2 != blank %}
-              <span class="color-grey h2">{{ section.settings.title2 }}</span>
+              <span class="color-grey h1">{{ section.settings.title2 }}</span>
             {% endif %}
-          </h2>
+          </h1>
         {% endif %}
 
         {{ section.settings.description }}
