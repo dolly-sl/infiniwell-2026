@@ -42,8 +42,8 @@
         "collection": "best-sellers",
         "paddingtop": 40,
         "paddingtopmobile": 30,
-        "paddingbottom": 0,
-        "paddingbottomMobile": 0,
+        "paddingbottom": 40,
+        "paddingbottomMobile": 30,
         "hidehrline": false
       }
     },
