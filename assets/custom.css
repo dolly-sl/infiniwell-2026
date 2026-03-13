@@ -468,7 +468,7 @@ border-radius: 20px;
 }
 .full-width-content-box .subtitle{
   border-bottom: 1px solid #E7D9CB;
-  padding: 20px;
+  padding: 0 0 20px;
   margin-bottom: 20px;
 }
 .full-width-content-box .full-format p,
