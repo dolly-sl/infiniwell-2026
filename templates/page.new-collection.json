@@ -23,9 +23,19 @@
         "paddingbottom": 0,
         "paddingbottommobile": 0
       }
+    },
+    "full_width_content_box_X6dQ3H": {
+      "type": "full-width-content-box",
+      "name": "Full Width Content Box",
+      "settings": {
+        "title": "Tailored Progression: Basic vs Advanced",
+        "subtitle": "Every person’s health is unique — and so should be their approach to specific health goals.",
+        "description": "<p><strong>Recommended Use:</strong></p><ul><li>Follow Advanced Protocol for 12-weeks (or until desired result achieved)</li><li>Step down to the Basic Protocol, designed for year-round maintenance</li><li>Should the need arise, step back up to the Advanced Protocol and repeat cycle throughout the year as you require</li></ul>"
+      }
     }
   },
   "order": [
-    "full_width_content_v2_DqmMTg"
+    "full_width_content_v2_DqmMTg",
+    "full_width_content_box_X6dQ3H"
   ]
 }
