@@ -20,7 +20,7 @@
 
 {% if section.settings.description != blank and section.settings.title1 != blank %}
   <div
-    class="full-width-content v2 section-{{ section.id }}-padding-top section-{{ section.id }}-padding-bottom"
+    class="full-width-content-box section-{{ section.id }}-padding-top section-{{ section.id }}-padding-bottom"
     data-aos="fade-up"
     data-aos-duration="2000"
   >
@@ -28,12 +28,12 @@
       <div class="box">
       <div class="content full-format">
         {% if section.settings.title1 != blank %}
-          <h1>
+          <h2>
             {{ section.settings.title1 }}
             {% if section.settings.title2 != blank %}
-              <span class="color-grey h1">{{ section.settings.title2 }}</span>
+              <span class="color-grey h2">{{ section.settings.title2 }}</span>
             {% endif %}
-          </h1>
+          </h2>
         {% endif %}
 
         {{ section.settings.description }}
