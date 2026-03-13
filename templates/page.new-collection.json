@@ -1,0 +1,71 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "full_width_content_v2_DqmMTg": {
+      "type": "full-width-content-v2",
+      "name": "Full Width Content v2",
+      "settings": {
+        "title1": "Professional",
+        "title2": "Protocols",
+        "description": "<p>This curated collection of eight targeted protocols reflects 7 years of clinical experience and will continue to evolve as new breakthroughs come to market.</p><p>Through complementary formulations and intentional timing strategies each protocol is designed to:</p><ul><li>Support multiple physiological pathways</li><li>Provide the structured approach necessary to deliver results that exceed those of single-product use.</li></ul>",
+        "buttonText": "",
+        "buttonLink": "",
+        "paddingtop": 90,
+        "paddingtopmobile": 80,
+        "paddingbottom": 0,
+        "paddingbottommobile": 0
+      }
+    },
+    "full_width_content_box_X6dQ3H": {
+      "type": "full-width-content-box",
+      "name": "Full Width Content Box",
+      "settings": {
+        "title": "Tailored Progression: Basic vs Advanced",
+        "subtitle": "Every person’s health is unique — and so should be their approach to specific health goals.",
+        "description": "<h6>RECOMMENDED USE:</h6><ul><li>Follow <strong>Advanced Protocol</strong> for <strong>12-weeks</strong> (or until desired result achieved)</li><li>Step down to the <strong>Basic Protocol, </strong>designed for year-round maintenance</li><li>Should the need arise, step back up to the <strong>Advanced Protocol</strong> and <strong>repeat cycle</strong> throughout the year as you require</li></ul>"
+      }
+    },
+    "four_column_product_section_L7EHYa": {
+      "type": "four-column-product-section",
+      "name": "Four Column Product Section",
+      "settings": {
+        "title": "Basic Protocols",
+        "description": "<p>Basic protocols are perfect for those starting their journey or prioritizing foundational support.</p>",
+        "collection": "best-sellers",
+        "paddingtop": 40,
+        "paddingtopmobile": 30,
+        "paddingbottom": 40,
+        "paddingbottomMobile": 30,
+        "hidehrline": false
+      }
+    },
+    "four_column_product_section_hNWYRm": {
+      "type": "four-column-product-section",
+      "name": "Four Column Product Section",
+      "settings": {
+        "title": "Advanced Protocols",
+        "description": "<p>Advanced protocols elevate that support with higher potency, expanded ingredient sets, and targeted pathways — ideal for users who want stronger intervention and accelerated benefits.</p>",
+        "collection": "bpc-products",
+        "paddingtop": 40,
+        "paddingtopmobile": 30,
+        "paddingbottom": 40,
+        "paddingbottomMobile": 30,
+        "hidehrline": true
+      }
+    }
+  },
+  "order": [
+    "full_width_content_v2_DqmMTg",
+    "full_width_content_box_X6dQ3H",
+    "four_column_product_section_L7EHYa",
+    "four_column_product_section_hNWYRm"
+  ]
+}
