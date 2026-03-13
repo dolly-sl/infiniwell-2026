@@ -514,10 +514,19 @@ position: initial;
   margin-top: 40px;
   
 }
+
+
 .four-column-product-section-v2 .product-list li.product-card{
   width: calc(25% - 20px);
   margin-left: 20px;
   margin-bottom: 50px;
+}
+
+@media only screen and (max-width:980px){
+.four-column-product-section-v2 .product-list li.product-card{
+  width: calc(33.333% - 20px);
+ 
+}
 }
 
 .four-column-product-section-v2::before{
