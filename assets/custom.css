@@ -507,7 +507,17 @@ position: initial;
   position: relative;
 }
 
-
+.four-column-product-section ul{
+  width: calc(100% + 20px);
+  margin-left: -20px;
+  margin-bottom: -50px;
+  
+}
+.four-column-product-section ul li{
+  width: calc(25% - 20px);
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
 
 .four-column-product-section::before{
     content: "";
