@@ -1,0 +1,336 @@
+  <div id="modal-product-image-gallery" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content product-gallery-popup">
+      <button class="close js__product-gallery-close" aria-label="Close image gallery">
+        {% render 'icon-mobile-menu-close' %}
+      </button>
+      <div class="product-gallery-image-wrapper">
+        <img
+          id="product-gallery-image"
+          src=""
+          alt=""
+          width="800"
+          height="800"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </div>
+
+<script>
+(function() {
+  function initProductImageGallery() {
+    var enableGallery = {{ gallery_modal | json }};
+    if (!enableGallery) return;
+
+    var modal = document.getElementById('modal-product-image-gallery');
+    var closeBtn = document.querySelector('.js__product-gallery-close');
+    var galleryImage = document.getElementById('product-gallery-image');
+    var imageWrapper = document.querySelector('.product-gallery-image-wrapper');
+    var productImages = document.querySelectorAll('.pdp-slider .image-section img');
+    
+    if (!modal || !galleryImage || !imageWrapper) return;
+    if (productImages.length === 0) return;
+
+    // Get all product images data
+    var imageData = [];
+    {% for media in product.media %}
+      {% if media.media_type == 'image' %}
+        imageData.push({
+          src: {{ media.src | img_url: 'master' | json }},
+          alt: {{ media.alt | escape | json }}
+        });
+      {% endif %}
+    {% endfor %}
+
+    // Zoom state - Dawn style (hover-based zoom with cursor following)
+    var isZoomed = false;
+    var scale = 2; // Dawn uses approximately 2x zoom
+
+    function openModal(imageIndex) {
+      if (imageIndex < 0 || imageIndex >= imageData.length) return;
+      
+      var image = imageData[imageIndex];
+      galleryImage.src = image.src;
+      galleryImage.alt = image.alt;
+      
+      isZoomed = false;
+      resetTransform();
+      
+      modal.style.display = 'block';
+      setTimeout(function() {
+        modal.classList.add('modal-opened');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      isZoomed = false;
+      resetTransform();
+      modal.classList.remove('modal-opened');
+      setTimeout(function() {
+        modal.style.display = 'none';
+      }, 300);
+      document.body.style.overflow = '';
+    }
+
+    function resetTransform() {
+      galleryImage.style.transform = 'translate(0, 0) scale(1)';
+      galleryImage.style.transformOrigin = 'center center';
+    }
+
+    // Dawn-style zoom: click to toggle, mouse move to pan when zoomed
+    imageWrapper.addEventListener('click', function(e) {
+      if (e.target.closest('.close')) return;
+      
+      // Check if clicking on the image itself
+      var rect = galleryImage.getBoundingClientRect();
+      var clickX = e.clientX;
+      var clickY = e.clientY;
+      
+      var clickedOnImage = clickX >= rect.left && clickX <= rect.right && 
+                          clickY >= rect.top && clickY <= rect.bottom;
+      
+      if (!clickedOnImage) {
+        // Clicked outside image - close modal
+        closeModal();
+        return;
+      }
+      
+      // Clicked on image - toggle zoom
+      isZoomed = !isZoomed;
+      
+      if (isZoomed) {
+        // Activate zoom mode
+        imageWrapper.style.cursor = 'zoom-out';
+        updateZoom(e);
+      } else {
+        // Deactivate zoom mode
+        imageWrapper.style.cursor = 'zoom-in';
+        resetTransform();
+      }
+    });
+
+    imageWrapper.addEventListener('mousemove', function(e) {
+      // Update cursor based on position
+      var rect = galleryImage.getBoundingClientRect();
+      var mouseX = e.clientX;
+      var mouseY = e.clientY;
+      
+      var overImage = mouseX >= rect.left && mouseX <= rect.right && 
+                     mouseY >= rect.top && mouseY <= rect.bottom;
+      
+      if (overImage) {
+        // Over image - show zoom cursor
+        if (isZoomed) {
+          imageWrapper.style.cursor = 'zoom-out';
+          updateZoom(e);
+        } else {
+          imageWrapper.style.cursor = 'zoom-in';
+        }
+      } else {
+        // Outside image - show default cursor
+        imageWrapper.style.cursor = 'default';
+      }
+      
+      // Update zoom position if zoomed
+      if (isZoomed && overImage) {
+        updateZoom(e);
+      }
+    });
+
+    function updateZoom(e) {
+      var rect = imageWrapper.getBoundingClientRect();
+      
+      // Get mouse position as percentage of the container
+      var mouseX = (e.clientX - rect.left) / rect.width;
+      var mouseY = (e.clientY - rect.top) / rect.height;
+      
+      // Clamp to 0-1 range
+      mouseX = Math.max(0, Math.min(1, mouseX));
+      mouseY = Math.max(0, Math.min(1, mouseY));
+      
+      // Calculate transform origin based on mouse position
+      // Dawn keeps the point under cursor fixed
+      var originX = mouseX * 100;
+      var originY = mouseY * 100;
+      
+      galleryImage.style.transformOrigin = originX + '% ' + originY + '%';
+      galleryImage.style.transform = 'scale(' + scale + ')';
+    }
+
+    // Add click handlers to product images
+    productImages.forEach(function(img, index) {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var imgIndex = Array.from(productImages).indexOf(img);
+        openModal(imgIndex);
+      });
+    });
+
+    // Close modal
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    // Close on backdrop click
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal || event.target.classList.contains('modal-backdrop')) {
+        closeModal();
+      }
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('modal-opened')) {
+        closeModal();
+      }
+    });
+
+    // Touch support for mobile
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var lastTouchTime = 0;
+
+    imageWrapper.addEventListener('touchstart', function(e) {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        
+        // Double tap to zoom
+        var currentTime = new Date().getTime();
+        var tapLength = currentTime - lastTouchTime;
+        
+        if (tapLength < 300 && tapLength > 0) {
+          e.preventDefault();
+          isZoomed = !isZoomed;
+          
+          if (isZoomed) {
+            updateZoom({
+              clientX: e.touches[0].clientX,
+              clientY: e.touches[0].clientY
+            });
+          } else {
+            resetTransform();
+          }
+        }
+        lastTouchTime = currentTime;
+      }
+    });
+
+    imageWrapper.addEventListener('touchmove', function(e) {
+      if (isZoomed && e.touches.length === 1) {
+        e.preventDefault();
+        updateZoom({
+          clientX: e.touches[0].clientX,
+          clientY: e.touches[0].clientY
+        });
+      }
+    }, { passive: false });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProductImageGallery);
+  } else {
+    setTimeout(initProductImageGallery, 500);
+  }
+})();
+</script>
+
+<style>
+  #modal-product-image-gallery {
+    z-index: 999999 !important;
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: none;
+  }
+
+  #modal-product-image-gallery.modal-opened {
+    opacity: 1;
+  }
+
+  #modal-product-image-gallery .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 18, 18, 0.75);
+  }
+
+  #modal-product-image-gallery .modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  #modal-product-image-gallery .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  #modal-product-image-gallery .close:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  #modal-product-image-gallery .product-gallery-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: default;
+    padding: 40px;
+    position: relative;
+  }
+
+  #modal-product-image-gallery .product-gallery-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+    border-radius: 20px;
+    transition: transform 0.1s ease-out;
+  }
+
+  @media screen and (max-width: 768px) {
+    #modal-product-image-gallery .product-gallery-image-wrapper {
+      padding: 20px;
+    }
+
+    #modal-product-image-gallery .close {
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>

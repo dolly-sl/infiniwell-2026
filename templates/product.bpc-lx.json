@@ -1,0 +1,742 @@
+{
+  "sections": {
+    "product_bpc_lx_HgGmNM": {
+      "type": "product-bpc-lx",
+      "blocks": {
+        "recharge_subscriptions_subscription_widget_v2_R49yjH": {
+          "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget-v2\/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "recharge_subscriptions_subscription_widget_v2_R49yjH"
+      ],
+      "name": "Product Information - BPC-LX",
+      "settings": {
+        "product_quantity_enable": false,
+        "enable_payment_button": true,
+        "onetimeText": "",
+        "subscribeText": "",
+        "enable_product_image_gallery_modal": true,
+        "iso_certified_labs_url": "#no-promises-proof",
+        "supplement_facts_image": "shopify:\/\/shop_images\/Frame_1321317670_1_fde33379-561f-4d5f-a5f2-1cad1d3b3e6d.png",
+        "custom_text": "Limited Edition"
+      }
+    },
+    "full_width_media_blocks_C8n9tP": {
+      "type": "full-width-media-blocks",
+      "blocks": {
+        "content_block_yt4dhM": {
+          "type": "content_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Line_6.svg",
+            "image_max_width": 198,
+            "title": "Unmatched Convenience",
+            "description": "<p>Take anytime, anywhere. No needles or bulky containers. Stable in all temperatures.<\/p>",
+            "alignment": "left"
+          }
+        },
+        "content_block_PhdRNG": {
+          "type": "content_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Line_6_1.svg",
+            "image_max_width": 165,
+            "title": "Rapid Absorption & Bioavailability",
+            "description": "<p>Via LipoEmulsion lipid-based oral delivery.<\/p>",
+            "alignment": "right"
+          }
+        }
+      },
+      "block_order": [
+        "content_block_yt4dhM",
+        "content_block_PhdRNG"
+      ],
+      "name": "Full Width Media Blocks",
+      "settings": {
+        "image_desktop": "shopify:\/\/shop_images\/12c411281ee4d87021364590e73abae8938aa9fc.gif",
+        "use_video_desktop": false,
+        "max_height_desktop": 600,
+        "image_mobile": "shopify:\/\/shop_images\/12c411281ee4d87021364590e73abae8938aa9fc.gif",
+        "use_video_mobile": false,
+        "max_height_mobile": 500,
+        "overlay_enable": false,
+        "overlay_opacity": 80,
+        "paddingtop": 64,
+        "paddingtopmobile": 56,
+        "paddingbottom": 64,
+        "paddingbottomMobile": 56
+      }
+    },
+    "benefits_QejPjz": {
+      "type": "benefits",
+      "blocks": {
+        "video_34dadH": {
+          "type": "video",
+          "settings": {
+            "media_type_desktop": "video",
+            "video_desktop": "shopify:\/\/files\/videos\/231aspectvideoiw.mp4",
+            "media_type_mobile": "video",
+            "height_desktop": 700,
+            "height_mobile": 400
+          }
+        },
+        "overlay_title_DnFkzc": {
+          "type": "overlay_title",
+          "settings": {
+            "title": "Pioneering Delivery Technology"
+          }
+        },
+        "overlay_text_cAYwL4": {
+          "type": "overlay_text",
+          "settings": {
+            "text": "<p>For Precision Molecules<\/p>"
+          }
+        },
+        "overlay_button_3KLAMR": {
+          "type": "overlay_button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Learn More",
+            "button_url": "",
+            "button_style": "primary",
+            "button_full_width_mobile": false
+          }
+        },
+        "title_3mpVei": {
+          "type": "title",
+          "settings": {
+            "title": "Benefits of Daily Use",
+            "alignment": "center"
+          }
+        },
+        "middle_image_txF6YJ": {
+          "type": "middle_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/infiniwell_spray_tube_front-spacetube__1.webp"
+          }
+        },
+        "collapsible_6BDKcC": {
+          "type": "collapsible",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/IW-Sleep-Gradient_2.png",
+            "title": "Joint Renewal",
+            "content": "<p>Maintains healthy connective tissue and supports joint flexibility for comfortable and fluid movement<\/p>"
+          }
+        },
+        "collapsible_jaUhAK": {
+          "type": "collapsible",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/IW-Aging-Gradient_2924794f-4703-44be-9775-8384f9d5e5b7_2.png",
+            "title": "Muscle Recovery",
+            "content": "<p>Promotes healthy tissue function and cellular stability after physical activity or stress.<\/p>"
+          }
+        },
+        "collapsible_Qjipia": {
+          "type": "collapsible",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/IW-Sleep-Gradient_3.png",
+            "title": "Gut Rejuvenation",
+            "content": "<p>Supports gut lining health and nutrient absorption for healthy digestive and nutrient absorption<\/p>"
+          }
+        },
+        "collapsible_RH4WTc": {
+          "type": "collapsible",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/IW-Aging-Gradient_2924794f-4703-44be-9775-8384f9d5e5b7_3.png",
+            "title": "Whole Body Resilience",
+            "content": "<p>Promotes whole-body resilience by supporting cellular health and optimal response to everyday physical and environmental stress<\/p>"
+          }
+        },
+        "button_EDrYjn": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Experience BPC-Lx",
+            "button_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "video_34dadH",
+        "overlay_title_DnFkzc",
+        "overlay_text_cAYwL4",
+        "overlay_button_3KLAMR",
+        "title_3mpVei",
+        "middle_image_txF6YJ",
+        "collapsible_6BDKcC",
+        "collapsible_jaUhAK",
+        "collapsible_Qjipia",
+        "collapsible_RH4WTc",
+        "button_EDrYjn"
+      ],
+      "name": "Benefits",
+      "settings": {
+        "paddingtop": 0,
+        "paddingbottom": 65,
+        "paddingtopmobile": 0,
+        "paddingbottommobile": 50,
+        "overlay_vertical_alignment": "top",
+        "overlay_horizontal_alignment": "left",
+        "overlay_text_alignment": "left",
+        "content_paddingtop": 0,
+        "content_paddingbottom": 0,
+        "content_paddingtopmobile": 0,
+        "content_paddingbottommobile": 0
+      }
+    },
+    "what_to_expect_xRkEqL": {
+      "type": "what-to-expect",
+      "blocks": {
+        "title_AJiULr": {
+          "type": "title",
+          "settings": {
+            "title": "What to Expect from BPC-Lx*",
+            "alignment": "left"
+          }
+        },
+        "stat_Ncwf7d": {
+          "type": "stat",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Layer_1.svg",
+            "counter_number": "93%",
+            "content": "<p>Joint comfort & function<\/p>"
+          }
+        },
+        "stat_7WEjgt": {
+          "type": "stat",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Layer_1.svg",
+            "counter_number": "92%",
+            "content": "<p>Strength & recovery<\/p>"
+          }
+        },
+        "stat_7zeizF": {
+          "type": "stat",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Layer_1.svg",
+            "counter_number": "83%",
+            "content": "<p>Digestive balance<\/p>"
+          }
+        },
+        "stat_rTpVq3": {
+          "type": "stat",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Layer_1.svg",
+            "counter_number": "92%",
+            "content": "<p>Difference in 4 weeks<\/p>"
+          }
+        },
+        "rich_text_YYtLVM": {
+          "type": "rich_text",
+          "settings": {
+            "content": "<p>*Study conducted over 3,000 InfiniWell members, aggregated population health data over one year.<br\/><a href=\"#\" title=\"#\"><em>See the live study<\/em><\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_AJiULr",
+        "stat_Ncwf7d",
+        "stat_7WEjgt",
+        "stat_7zeizF",
+        "stat_rTpVq3",
+        "rich_text_YYtLVM"
+      ],
+      "name": "What to Expect",
+      "settings": {
+        "paddingtop": 64,
+        "paddingbottom": 64,
+        "paddingleft": 0,
+        "paddingright": 0,
+        "paddingtopmobile": 48,
+        "paddingbottommobile": 0,
+        "paddingleftmobile": 32,
+        "paddingrightmobile": 32
+      }
+    },
+    "media_background_EWf36P": {
+      "type": "media-background",
+      "name": "Media Background",
+      "settings": {
+        "max_height_desktop": 350,
+        "video_desktop": "shopify:\/\/files\/videos\/spiral-animation-video-2.mp4",
+        "use_video_desktop": true,
+        "flip_horizontal_desktop": true,
+        "max_height_mobile": 165,
+        "use_video_mobile": true,
+        "flip_horizontal_mobile": true
+      }
+    },
+    "professional_brand_BaihKC": {
+      "type": "professional-brand",
+      "blocks": {
+        "image_JUMtLV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.svg",
+            "image_width": 140
+          }
+        },
+        "title_8Vnj8A": {
+          "type": "title",
+          "settings": {
+            "title": "#1 Professional Brand",
+            "alignment": "left"
+          }
+        },
+        "media_VBfH6c": {
+          "type": "media",
+          "settings": {
+            "video_desktop": "shopify:\/\/files\/videos\/183651-cityscape-New_York_City-Brooklyn_Bridge_1.mp4",
+            "use_video_desktop": true,
+            "use_video_mobile": true
+          }
+        },
+        "rich_text_HXKxRD": {
+          "type": "rich_text",
+          "settings": {
+            "content": "<p>Teaming up with world-class researchers. Trusted by over 25k+ medical professionals globally.<\/p>"
+          }
+        },
+        "button_nKXarz": {
+          "type": "button",
+          "settings": {
+            "button_label": "Professional Product Info",
+            "button_url": "https:\/\/infiniwell.com\/account\/login"
+          }
+        },
+        "logo_item_3KPLCX": {
+          "type": "logo_item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/logo-03.svg"
+          }
+        },
+        "logo_item_hemCje": {
+          "type": "logo_item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/logo-02.svg"
+          }
+        },
+        "logo_item_pLbK4i": {
+          "type": "logo_item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Vector_3.svg"
+          }
+        },
+        "logo_item_R4wJbt": {
+          "type": "logo_item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Vector_4.svg"
+          }
+        }
+      },
+      "block_order": [
+        "image_JUMtLV",
+        "title_8Vnj8A",
+        "media_VBfH6c",
+        "rich_text_HXKxRD",
+        "button_nKXarz",
+        "logo_item_3KPLCX",
+        "logo_item_hemCje",
+        "logo_item_pLbK4i",
+        "logo_item_R4wJbt"
+      ],
+      "name": "Professional Brand",
+      "settings": {
+        "paddingtop": 64,
+        "paddingbottom": 64,
+        "paddingleft": 0,
+        "paddingright": 0,
+        "paddingtopmobile": 40,
+        "paddingbottommobile": 40,
+        "paddingleftmobile": 32,
+        "paddingrightmobile": 32,
+        "enable_marquee": false
+      }
+    },
+    "no_promises_proof_zGBwjV": {
+      "type": "no-promises-proof",
+      "blocks": {
+        "content_image_6LTkUT": {
+          "type": "content_image",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Frame_1321317670_1_fde33379-561f-4d5f-a5f2-1cad1d3b3e6d.png"
+          }
+        },
+        "image_XJPXLB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector_2.svg",
+            "image_width": 50
+          }
+        },
+        "title_jV9CGQ": {
+          "type": "title",
+          "settings": {
+            "title": "No Promises Just Proof",
+            "alignment": "left"
+          }
+        },
+        "rich_text_frPLax": {
+          "type": "rich_text",
+          "settings": {
+            "content": "<p>3rd-party tested by ISO-Certified Labs<\/p>",
+            "alignment": "left"
+          }
+        },
+        "lab_logo_LkPV3c": {
+          "type": "lab_logo",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Vector_941655a3-87ce-4d30-93ed-ff1acf3368ec.svg",
+            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0114\/7741\/8065\/files\/BPCLxCofA_4.pdf?v=1763139189",
+            "passed_text": "Passed",
+            "list_items": "70 Different pesticides\n4 types of heavy metals\n16 different contaminants\n9 Microbial contaminants"
+          }
+        },
+        "lab_logo_9G7BBN": {
+          "type": "lab_logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/msb-logo.svg",
+            "url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0114\/7741\/8065\/files\/BPCLxCofA_4.pdf?v=1763139189",
+            "passed_text": "Passed",
+            "list_items": "Identity\nPotency\nPurity\nMicrobiological\nAllergens\nHeavy metals"
+          }
+        }
+      },
+      "block_order": [
+        "content_image_6LTkUT",
+        "image_XJPXLB",
+        "title_jV9CGQ",
+        "rich_text_frPLax",
+        "lab_logo_LkPV3c",
+        "lab_logo_9G7BBN"
+      ],
+      "name": "No Promises Just Proof",
+      "settings": {
+        "background_color": "#fafafa",
+        "background_image": "shopify:\/\/shop_images\/backgroundwater.jpg",
+        "max_width": 1200,
+        "paddingtop": 60,
+        "paddingbottom": 60,
+        "paddingleft": 15,
+        "paddingright": 15,
+        "paddingtopmobile": 48,
+        "paddingbottommobile": 88,
+        "paddingleftmobile": 32,
+        "paddingrightmobile": 32
+      }
+    },
+    "feel_difference_free_7aqf3a": {
+      "type": "feel-difference-free",
+      "blocks": {
+        "image_xemEhF": {
+          "type": "image",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/astro_10.png",
+            "image_mobile": "shopify:\/\/shop_images\/astro_10.png"
+          }
+        },
+        "title_tdxdBr": {
+          "type": "title",
+          "settings": {
+            "title": "Feel the Difference or it's Free",
+            "alignment": "left"
+          }
+        },
+        "text_mrXhU8": {
+          "type": "text",
+          "settings": {
+            "content": "<p>If you don't feel a difference in 30 days, we'll refund your order.<\/p>",
+            "alignment": "left"
+          }
+        },
+        "icon_text_hikGQN": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/shipping-fast-solid.svg",
+            "text": "Fast + Free US Shipping"
+          }
+        },
+        "icon_text_9aLiGP": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/pencil-alt-solid.svg",
+            "text": "Pause, adjust, or cancel anytime"
+          }
+        },
+        "icon_text_Rrw9zQ": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/redo-alt-solid.svg",
+            "text": "30-day money-back guarantee"
+          }
+        },
+        "button_VaBr6D": {
+          "type": "button",
+          "settings": {
+            "button_label": "Try BPC-Lx Risk-Free",
+            "enable_add_to_cart": true,
+            "button_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "image_xemEhF",
+        "title_tdxdBr",
+        "text_mrXhU8",
+        "icon_text_hikGQN",
+        "icon_text_9aLiGP",
+        "icon_text_Rrw9zQ",
+        "button_VaBr6D"
+      ],
+      "name": "Feel the Difference or it's Free",
+      "settings": {
+        "paddingtop": 64,
+        "paddingbottom": 64,
+        "paddingleft": 0,
+        "paddingright": 0,
+        "paddingtopmobile": 0,
+        "paddingbottommobile": 48,
+        "paddingleftmobile": 0,
+        "paddingrightmobile": 0,
+        "image_height_desktop": 510,
+        "image_max_height_desktop": 510,
+        "image_height_mobile": 300,
+        "image_max_height_mobile": 300,
+        "content_paddingtop": 0,
+        "content_paddingbottom": 0,
+        "content_paddingleft": 0,
+        "content_paddingright": 0,
+        "content_paddingtopmobile": 0,
+        "content_paddingbottommobile": 0,
+        "content_paddingleftmobile": 32,
+        "content_paddingrightmobile": 32
+      }
+    },
+    "pdp_ingredients_slider_hnpBGU": {
+      "type": "pdp-Ingredients-slider",
+      "settings": {}
+    },
+    "related_products_Jg4r6B": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {}
+    },
+    "pdp_reviews_9MHAWi": {
+      "type": "pdp-reviews",
+      "custom_css": [],
+      "settings": {}
+    },
+    "product_faq_y9BRKL": {
+      "type": "product-faq",
+      "blocks": {
+        "custom_title_Y9gKNz": {
+          "type": "custom_title",
+          "settings": {
+            "title": "Have more questions? We have answers"
+          }
+        },
+        "custom_text_VmTdTi": {
+          "type": "custom_text",
+          "settings": {
+            "content": "<p>InfiniCare—your personal concierge for longevity. Our team of experts, including our on-staff physician, are standing by to ensure world-class service.<\/p>",
+            "text_color": "#1a1b1b",
+            "icon": ""
+          }
+        },
+        "custom_button_W4awyd": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "Go to Live Chat",
+            "button_url": "https:\/\/infiniwell.com\/?gs_open_chat&_kx=wCK8TOnthhN-hmRp7wsQy4lu9uvkr3dE6sE4Eo7bddE.T3bJhW",
+            "open_chat": true,
+            "chat_id": "gorgias-chat-messenger-button",
+            "button_style": "primary"
+          }
+        },
+        "custom_button_VQ4QYw": {
+          "type": "custom_button",
+          "settings": {
+            "button_text": "Call Us 1-888-819-4640",
+            "button_url": "tel:18888194640",
+            "open_chat": false,
+            "chat_id": "",
+            "button_icon": "shopify:\/\/shop_images\/Vector_c6fa81e1-8c3b-48c9-a106-851f60a8bec3.svg",
+            "button_style": "secondary"
+          }
+        },
+        "custom_text_Yc8kqU": {
+          "type": "custom_text",
+          "settings": {
+            "content": "<p><em>Our team is located in Dallas, TX, USA<\/em><\/p>",
+            "text_color": "#84827e",
+            "icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M22.6924 4.84961C22.9441 4.84967 23.1504 5.0531 23.1504 5.30566V17.6943C23.1504 17.9469 22.9441 18.1503 22.6924 18.1504H1.30762C1.05588 18.1503 0.84961 17.9469 0.849609 17.6943V5.30566C0.849609 5.0531 1.05587 4.84968 1.30762 4.84961H22.6924ZM1.76562 17.2393H22.2344V15.958H1.76562V17.2393ZM1.76562 15.0469H22.2344V13.8818H10.9443C10.9374 13.8818 10.9307 13.8802 10.9238 13.8799H1.76562V15.0469ZM11.4033 12.9707H22.2344V11.9541H16.8184C15.35 11.9542 13.8816 11.9552 12.7803 11.9551C12.2297 11.955 11.7705 11.9542 11.4492 11.9541C11.4337 11.9541 11.4182 11.9541 11.4033 11.9541V12.9707ZM1.76562 12.9688H10.4873V11.5029L10.4863 11.498C10.4863 11.4948 10.4872 11.4915 10.4873 11.4883V9.50098L10.4863 9.49609C10.4863 9.49283 10.4872 9.48958 10.4873 9.48633V7.5L10.4863 7.49512C10.4863 7.49201 10.4872 7.48845 10.4873 7.48535V5.76074H1.76562V12.9688ZM11.4033 11.043C11.4183 11.043 11.4336 11.043 11.4492 11.043C11.7704 11.0431 12.2296 11.0439 12.7803 11.0439C13.8816 11.044 15.35 11.0431 16.8184 11.043H22.2344V9.95215H20.8564C19.7551 9.95228 18.2867 9.95302 16.8184 9.95312C15.35 9.95323 13.8816 9.9532 12.7803 9.95312C12.2297 9.95309 11.7705 9.95226 11.4492 9.95215C11.4337 9.95214 11.4182 9.95215 11.4033 9.95215V11.043ZM16.8184 7.95117H11.4492C11.4337 7.95117 11.4182 7.9502 11.4033 7.9502V9.04102C11.4183 9.04102 11.4336 9.04101 11.4492 9.04102C11.7704 9.04113 12.2296 9.04195 12.7803 9.04199C13.8816 9.04207 15.35 9.0421 16.8184 9.04199C18.2867 9.04189 19.7551 9.04115 20.8564 9.04102H22.2344V7.9502H20.8564C19.7551 7.95033 18.2867 7.95107 16.8184 7.95117ZM11.4033 7.03906C11.4183 7.03907 11.4336 7.04003 11.4492 7.04004H16.8184C18.2867 7.03993 19.7551 7.03919 20.8564 7.03906H22.2344V5.76074H11.4033V7.03906Z\" fill=\"#84827E\"><\/path>\n<path d=\"M3.36217 6.3103L3.60337 6.79552L4.14266 6.87335L3.75247 7.25101L3.84457 7.78433L3.36217 7.53249L2.87988 7.78433L2.97198 7.25101L2.58179 6.87335L3.12108 6.79552L3.36217 6.3103Z\" fill=\"#84827E\"><\/path>\n<path d=\"M3.36217 8.71122L3.60337 9.19644L4.14266 9.27426L3.75247 9.65193L3.84457 10.1851L3.36217 9.9334L2.87988 10.1851L2.97198 9.65193L2.58179 9.27426L3.12108 9.19644L3.36217 8.71122Z\" fill=\"#84827E\"><\/path>\n<path d=\"M3.36217 10.9452L3.60337 11.4304L4.14266 11.5082L3.75247 11.8859L3.84457 12.4192L3.36217 12.1674L2.87988 12.4192L2.97198 11.8859L2.58179 11.5082L3.12108 11.4304L3.36217 10.9452Z\" fill=\"#84827E\"><\/path>\n<path d=\"M6.12665 6.3103L6.36784 6.79552L6.90703 6.87335L6.51684 7.25101L6.60894 7.78433L6.12665 7.53249L5.64435 7.78433L5.73645 7.25101L5.34626 6.87335L5.88555 6.79552L6.12665 6.3103Z\" fill=\"#84827E\"><\/path>\n<path d=\"M6.12665 8.71122L6.36784 9.19644L6.90703 9.27426L6.51684 9.65193L6.60894 10.1851L6.12665 9.9334L5.64435 10.1851L5.73645 9.65193L5.34626 9.27426L5.88555 9.19644L6.12665 8.71122Z\" fill=\"#84827E\"><\/path>\n<path d=\"M6.12665 10.9452L6.36784 11.4304L6.90703 11.5082L6.51684 11.8859L6.60894 12.4192L6.12665 12.1674L5.64435 12.4192L5.73645 11.8859L5.34626 11.5082L5.88555 11.4304L6.12665 10.9452Z\" fill=\"#84827E\"><\/path>\n<path d=\"M8.89112 6.3103L9.13222 6.79552L9.6715 6.87335L9.28131 7.25101L9.37341 7.78433L8.89112 7.53249L8.40882 7.78433L8.50093 7.25101L8.11073 6.87335L8.64992 6.79552L8.89112 6.3103Z\" fill=\"#84827E\"><\/path>\n<path d=\"M8.89112 8.71122L9.13222 9.19644L9.6715 9.27426L9.28131 9.65193L9.37341 10.1851L8.89112 9.9334L8.40882 10.1851L8.50093 9.65193L8.11073 9.27426L8.64992 9.19644L8.89112 8.71122Z\" fill=\"#84827E\"><\/path>\n<path d=\"M8.89112 10.9452L9.13222 11.4304L9.6715 11.5082L9.28131 11.8859L9.37341 12.4192L8.89112 12.1674L8.40882 12.4192L8.50093 11.8859L8.11073 11.5082L8.64992 11.4304L8.89112 10.9452Z\" fill=\"#84827E\"><\/path>\n<\/svg>"
+          }
+        }
+      },
+      "block_order": [
+        "custom_title_Y9gKNz",
+        "custom_text_VmTdTi",
+        "custom_button_W4awyd",
+        "custom_button_VQ4QYw",
+        "custom_text_Yc8kqU"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {h2 {text-align: left; max-width: 90%; margin: 0 auto; } p {text-align: left; }}"
+      ],
+      "settings": {
+        "use_product_metafield": true,
+        "use_designed_layout": true
+      }
+    },
+    "subscription_fz6phF": {
+      "type": "subscription",
+      "blocks": {
+        "image_re8FVR": {
+          "type": "image",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/applestylewithdryice.png",
+            "image_mobile": "shopify:\/\/shop_images\/applestylewithdryice.png",
+            "image_height_desktop": 510,
+            "image_max_height_desktop": 510,
+            "image_height_mobile": 420,
+            "image_max_height_mobile": 420
+          }
+        },
+        "title_PD6i9B": {
+          "type": "title",
+          "settings": {
+            "title": "Win a Month's Supply of BPC-Lx",
+            "alignment": "left"
+          }
+        },
+        "text_ea4a9F": {
+          "type": "text",
+          "settings": {
+            "content": "<p>We choose 4 lucky subscribers every month! Join our mailing list for your chance to win.<\/p>",
+            "alignment": "left"
+          }
+        },
+        "newsletter_TPXPtG": {
+          "type": "newsletter",
+          "settings": {
+            "placeholder": "name@mail.com",
+            "button_text": "Enter To Win",
+            "success_message": "Thanks for subscribing!"
+          }
+        }
+      },
+      "block_order": [
+        "image_re8FVR",
+        "title_PD6i9B",
+        "text_ea4a9F",
+        "newsletter_TPXPtG"
+      ],
+      "name": "Subscription",
+      "settings": {
+        "paddingtop": 64,
+        "paddingbottom": 64,
+        "paddingleft": 0,
+        "paddingright": 0,
+        "paddingtopmobile": 48,
+        "paddingbottommobile": 48,
+        "paddingleftmobile": 32,
+        "paddingrightmobile": 32,
+        "content_paddingtop": 0,
+        "content_paddingbottom": 0,
+        "content_paddingleft": 0,
+        "content_paddingright": 0,
+        "content_paddingtopmobile": 0,
+        "content_paddingbottommobile": 0,
+        "content_paddingleftmobile": 0,
+        "content_paddingrightmobile": 0
+      }
+    },
+    "product_recommendations_96y7Ew": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "title": ""
+      }
+    },
+    "four_column_product_slider_gKzE9c": {
+      "type": "four-column-product-slider",
+      "blocks": {
+        "product_8PNJNj": {
+          "type": "product",
+          "settings": {
+            "product": "bpc-157-rapid-pro"
+          }
+        },
+        "product_kTKG7J": {
+          "type": "product",
+          "settings": {
+            "product": "ptd-dbm-methyl-vanillate"
+          }
+        },
+        "product_GPig4m": {
+          "type": "product",
+          "settings": {
+            "product": "dhh-b"
+          }
+        },
+        "product_rDG6w7": {
+          "type": "product",
+          "settings": {
+            "product": "bpc-157-rapid"
+          }
+        },
+        "product_TraPjK": {
+          "type": "product",
+          "settings": {
+            "product": "duo-cosmetic-ghk-cu-zu-thymulin"
+          }
+        },
+        "product_C9hNCf": {
+          "type": "product",
+          "settings": {
+            "product": "control"
+          }
+        },
+        "product_FDpFGF": {
+          "type": "product",
+          "settings": {
+            "product": "ignight"
+          }
+        }
+      },
+      "block_order": [
+        "product_8PNJNj",
+        "product_kTKG7J",
+        "product_GPig4m",
+        "product_rDG6w7",
+        "product_TraPjK",
+        "product_C9hNCf",
+        "product_FDpFGF"
+      ],
+      "settings": {
+        "title1": "Complete your",
+        "title2": "Routine",
+        "buttonText": "",
+        "buttonLink": ""
+      }
+    }
+  },
+  "order": [
+    "product_bpc_lx_HgGmNM",
+    "full_width_media_blocks_C8n9tP",
+    "benefits_QejPjz",
+    "what_to_expect_xRkEqL",
+    "media_background_EWf36P",
+    "professional_brand_BaihKC",
+    "no_promises_proof_zGBwjV",
+    "feel_difference_free_7aqf3a",
+    "pdp_ingredients_slider_hnpBGU",
+    "related_products_Jg4r6B",
+    "pdp_reviews_9MHAWi",
+    "product_faq_y9BRKL",
+    "subscription_fz6phF",
+    "product_recommendations_96y7Ew",
+    "four_column_product_slider_gKzE9c"
+  ]
+}

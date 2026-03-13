@@ -1,0 +1,240 @@
+/* ============================================================
+   Subscription Section Styles
+   Mobile-First Approach
+   ============================================================ */
+
+/* Section Base - Full Width */
+.subscription-win {
+  position: relative;
+  width: 100%;
+  background-color: #FEFFFE;
+}
+
+/* Wrapper */
+.subscription-win .subscription-win-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+/* Image Container - Full Width with Fixed Height */
+.subscription-win .subscription-win-image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.subscription-win .subscription-win-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.subscription-win .subscription-win-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscription-win .subscription-win-image-placeholder .placeholder-svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+/* Content Container */
+.subscription-win .subscription-win-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 398px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* Title */
+.subscription-win .subscription-win-title-wrapper.align-left {
+  text-align: left;
+}
+
+.subscription-win .subscription-win-title-wrapper.align-center {
+  text-align: center;
+}
+
+.subscription-win .subscription-win-title-wrapper.align-right {
+  text-align: right;
+}
+
+.subscription-win .subscription-win-title {
+  color: var(--txt-dark, #1A1B1B);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  line-height: 40px;
+  margin: 0;
+  text-transform: inherit;
+}
+
+/* Text */
+.subscription-win .subscription-win-text-wrapper.align-left {
+  text-align: left;
+}
+
+.subscription-win .subscription-win-text-wrapper.align-center {
+  text-align: center;
+}
+
+.subscription-win .subscription-win-text-wrapper.align-right {
+  text-align: right;
+}
+
+.subscription-win .subscription-win-text p {
+  color: var(--txt-dark, #1A1B1B);
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Newsletter Form */
+.subscription-win .subscription-win-newsletter-wrapper {
+  width: 100%;
+}
+
+.subscription-win .subscription-win-form {
+  width: 100%;
+}
+
+.subscription-win .subscription-win-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Input Field */
+.subscription-win .subscription-win-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--txt-dark, #84827E);
+  border-radius: 48px;
+  background-color: var(--txt-light, #FEFFFE);
+  color: var(--txt-dark, #1A1B1B);
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.subscription-win .subscription-win-input::placeholder {
+  color: rgba(26, 27, 27, 0.5);
+}
+
+.subscription-win .subscription-win-input:focus {
+  outline: none;
+  border-color: var(--txt-dark, #1A1B1B);
+}
+
+/* Button with Arrow */
+.subscription-win .btn--primary.subscription-win-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-block: 12px;
+  background-color: var(--txt-dark, #1A1B1B);
+  color: var(--txt-light, #FFFDF7);
+  border: 2px solid var(--txt-dark, #1A1B1B);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.subscription-win .btn--primary.subscription-win-button:hover {
+  background-color: transparent;
+  color: var(--txt-dark, #1A1B1B);
+  border-color: var(--txt-dark, #1A1B1B);
+}
+
+.subscription-win .button-arrow {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Success/Error Messages */
+p#subscription-win-message {
+  margin-top: 1rem;
+}
+
+/* Visibility Utilities */
+.subscription-win .none-480 {
+  display: block;
+}
+
+.subscription-win .block-480 {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .subscription-win .none-480 {
+    display: none !important;
+  }
+
+  .subscription-win .block-480 {
+    display: block !important;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .subscription-win .subscription-win-title {
+    font-size: 45px;
+    line-height: 52px;
+  }
+
+  .subscription-win .subscription-win-wrapper{
+    flex-direction: row;
+    column-gap: 32px;
+    align-items: center;
+  }
+
+  .subscription-win .subscription-win-image-container {
+    border-radius: 0 24px 24px 0;
+    width: 720px;
+    max-width: 720px;
+    flex-shrink: 0;
+  }
+
+  .subscription-win .subscription-win-content {
+    max-width: 512px;
+    margin-right: auto;
+  }
+}
+
+/* For ultra-wide screens, constrain the content from spreading too far */
+@media screen and (min-width: 1440px) {
+  .subscription-win .subscription-win-wrapper {
+    padding-right: calc((100vw - 1440px) / 2);
+  }
+}

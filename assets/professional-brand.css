@@ -1,0 +1,396 @@
+/* ============================================================
+   Professional Brand Section Styles
+   ============================================================ */
+
+/* Section Base - Full Width */
+.professional-brand {
+  position: relative;
+  width: 100%;
+  background-color: #FEFFFE;
+}
+
+/* Container with Max Width */
+.professional-brand .container-brand {
+  position: relative;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  z-index: 2;
+}
+
+/* Header Container - Max Width 512px */
+.professional-brand .brand-header {
+  max-width: 512px;
+}
+
+/* Brand Image */
+.professional-brand .brand-image {
+  margin-bottom: 16px;
+}
+
+.professional-brand .brand-image img {
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+/* Title Wrapper */
+.professional-brand .brand-title-wrapper.align-left {
+  text-align: left;
+}
+
+.professional-brand .brand-title-wrapper.align-center {
+  text-align: center;
+}
+
+.professional-brand .brand-title-wrapper.align-right {
+  text-align: right;
+}
+
+.professional-brand .brand-title {
+  color: var(--txt-dark, #1A1B1B);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  line-height: 40px;
+  margin: 0;
+  text-transform: initial;
+  letter-spacing: -.5px;
+}
+
+/* Media Container - Max Width 720px */
+.professional-brand .brand-media {
+  overflow: hidden;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.professional-brand .brand-media-video,
+.professional-brand .brand-media-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.professional-brand .brand-media-placeholder {
+  width: 100%;
+  background: #f5f5f5;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.professional-brand .brand-media-placeholder .placeholder-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.professional-brand .brand-image .placeholder-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Rich Text */
+.professional-brand .brand-richtext {
+  margin-bottom: 32px;
+}
+
+.professional-brand .brand-richtext p {
+  color: var(--txt-dark, #1A1B1B);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  margin: 0 0 15px 0;
+}
+
+.professional-brand .brand-richtext p:last-child {
+  margin-bottom: 0;
+}
+
+/* Button */
+.professional-brand .brand-button-wrapper {
+  margin-top: 30px;
+}
+
+.professional-brand .btn--primary {
+  padding-block: 12px;
+  width: 100%;
+  height: 50px;
+  color: var(--txt-light, #FFFDF7);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+/* Logo Marquee */
+.professional-brand .brand-marquee {
+  overflow: hidden;
+  padding-top: 32px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Marquee Track - Container for scrolling content */
+.professional-brand .marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+  opacity: .3;
+}
+
+/* Marquee Content - Each set of logos */
+.professional-brand .marquee-content {
+  display: flex;
+  gap: 88px;
+  flex-shrink: 0;
+  padding-right: 88px;
+}
+
+/* Mobile gap adjustment */
+@media screen and (max-width: 767px) {
+  .professional-brand .marquee-content {
+    gap: 48px;
+    padding-right: 48px;
+  }
+}
+
+/* Marquee Logo Item */
+.professional-brand .marquee-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.professional-brand .marquee-logo-item img {
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.professional-brand .marquee-logo-item .placeholder-svg {
+  max-height: 60px;
+  width: auto;
+  opacity: 0.3;
+}
+
+/* Marquee Animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Static Marquee - No Animation */
+.professional-brand .brand-marquee.marquee-static .marquee-track {
+  animation: none;
+  justify-content: center;
+  width: 100%;
+}
+
+.professional-brand .brand-marquee.marquee-static .marquee-content:not(:first-child) {
+  display: none;
+}
+
+.professional-brand .brand-marquee.marquee-static .marquee-content {
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px 48px;
+  padding-right: 0;
+}
+
+/* Mobile/Desktop Visibility Utilities */
+@media screen and (max-width: 480px) {
+  .professional-brand .none-480 {
+    display: none !important;
+  }
+
+  .professional-brand .block-480 {
+    display: block !important;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .professional-brand .block-480 {
+    display: none !important;
+  }
+
+  .professional-brand .none-480 {
+    display: block !important;
+  }
+}
+
+/* ============================================================
+   Desktop Layout (≥960px)
+   ============================================================ */
+
+@media screen and (min-width: 960px) {
+  /* Container - Grid layout with 2 columns, 3 rows */
+  .professional-brand .container-brand {
+    display: grid;
+    grid-template-columns: minmax(400px, 700px) 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: clamp(24px, 3vw, 48px);
+    row-gap: 24px;
+    padding-left: clamp(16px, 2vw, 32px);
+    padding-right: clamp(16px, 2vw, 32px);
+  }
+
+  /* Brand Header - Row 1, Column 2 - 50% width on small desktops */
+  .professional-brand .brand-header {
+    grid-column: 2;
+    grid-row: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Brand Media - Column 1, spans all 3 rows */
+  .professional-brand .brand-media {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    max-width: 720px;
+    align-self: start;
+    width: 100%;
+  }
+
+  /* Brand Content - Row 2, Column 2 */
+  .professional-brand .brand-content {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 100%;
+    align-self: start;
+    width: 100%;
+  }
+
+  /* Title - Larger on desktop, scales down to fit */
+  .professional-brand .brand-title {
+    font-size: clamp(32px, 3.5vw, 45px);
+    line-height: clamp(40px, 4vw, 52px);
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Logo Marquee - Reset full-width on desktop */
+  .professional-brand .brand-marquee {
+    width: auto;
+    position: static;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Medium Desktop (≥1024px) - Increase content width slightly, keep title single line */
+@media screen and (min-width: 1024px) {
+  .professional-brand .brand-header {
+    max-width: 450px;
+  }
+
+  .professional-brand .brand-content {
+    max-width: 450px;
+  }
+
+  /* Title stays on one line, scales font size */
+  .professional-brand .brand-title {
+    font-size: clamp(36px, 3.2vw, 45px);
+    white-space: nowrap;
+  }
+
+  .professional-brand .brand-header {
+    margin-top: 32px;
+  }
+
+  .professional-brand .brand-marquee.marquee-static .marquee-content {
+    gap: 48px;
+  }
+}
+
+/* Large Desktop (≥1239px) - Remove padding, add marquee styles */
+@media screen and (min-width: 1239px) {
+  /* Add padding to bottom of content to prevent marquee overlap */
+  .professional-brand .brand-content {
+    padding-bottom: 100px; /* Space for marquee that has -100px margin */
+  }
+
+  .professional-brand .brand-marquee {
+    padding-top: 0;
+    padding-bottom: 19.5px;
+    margin-top: -100px; /* Keep original negative margin */
+    position: relative;
+    z-index: 0; /* Behind content */
+  }
+}
+
+/* Targets WebKit browsers (Safari, Chrome on macOS) */
+@media screen and (min-width: 1239px) {
+  @supports (-webkit-appearance: none) {
+    .professional-brand .brand-content {
+      padding-bottom: 0; /* macOS-specific value */
+    }
+    
+    .professional-brand .brand-marquee {
+      margin-top: 0;
+      padding-top: 2rem;
+      position: relative;
+      z-index: 0; /* Behind content */
+      padding-bottom: 0;
+    }
+    
+    .professional-brand .brand-header {
+      margin-top: 3rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1279px) {
+
+  .professional-brand .container-brand {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .professional-brand .container-brand {
+    max-width: 1220px;
+  }
+
+  .professional-brand .brand-header {
+    /* margin-top: 16px; */
+    max-width: 512px;
+  }
+
+  .professional-brand .brand-content {
+    max-width: 512px;
+  }
+
+  /* Allow title to wrap on very large screens with full width */
+  .professional-brand .brand-title {
+    white-space: normal;
+    font-size: 45px;
+    line-height: 52px;
+  }
+}

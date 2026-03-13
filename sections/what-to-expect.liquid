@@ -1,0 +1,462 @@
+{% comment %} 
+                                      Section: What to Expect from BPC-Lx 
+                                      - Full-width section with max-width container 
+                                      - Title with alignment options 
+                                      - Stat blocks with icons, animated counter numbers, and content (max 4) 
+                                      - Rich text block with customizable color and font size 
+{% endcomment %}
+
+{{ 'what-to-expect.css' | asset_url | stylesheet_tag }}
+
+<style>
+  /* Dynamic Padding */
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.paddingtop | round: 0 }}px;
+    padding-bottom: {{ section.settings.paddingbottom | round: 0 }}px;
+    padding-left: {{ section.settings.paddingleft | round: 0 }}px;
+    padding-right: {{ section.settings.paddingright | round: 0 }}px;
+  }
+
+  /* Mobile Padding */
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.paddingtopmobile | round: 0 }}px;
+      padding-bottom: {{ section.settings.paddingbottommobile | round: 0 }}px;
+      padding-left: {{ section.settings.paddingleftmobile | round: 0 }}px;
+      padding-right: {{ section.settings.paddingrightmobile | round: 0 }}px;
+    }
+  }
+</style>
+
+<section class="what-to-expect section-{{ section.id }}-padding section-{{ section.id }}">
+  <div class="container-expect container-960">
+
+    <!-- Title Block -->
+    {% for block in section.blocks %}
+      {% if block.type == 'title' %}
+        <div class="title-wrapper align-{{ block.settings.alignment }}" {{ block.shopify_attributes }}>
+          {% if block.settings.title != blank %}
+            <h2 class="expect-title">{{ block.settings.title }}</h2>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <!-- Stats Container -->
+    <div class="stats-container">
+      {% assign stat_count = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'stat' %}
+          {% assign stat_count = stat_count | plus: 1 %}
+          <div class="stat-item {% if stat_count < 4 %}border-bottom{% endif %}" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <div class="stat-icon">
+                <img
+                  src="{{ block.settings.icon | image_url: width: 100 }}"
+                  alt="{{ block.settings.icon.alt | default: 'Icon' }}"
+                  width="48"
+                  height="48"
+                  loading="lazy">
+              </div>
+            {% else %}
+              <div class="stat-icon placeholder">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r="23"
+                    stroke="#D9D9D9"
+                    stroke-width="2" />
+                  <path
+                    d="M24 14V34M14 24H34"
+                    stroke="#D9D9D9"
+                    stroke-width="2"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+            {% endif %}
+
+            <div class="stat-content">
+              {% if block.settings.counter_number != blank %}
+                <div class="stat-counter-wrapper">
+                  <h3 class="stat-counter" data-counter="{{ block.settings.counter_number }}">
+                    {% if block.settings.counter_number contains '%' %}
+                      <span class="counter-suffix">%</span>
+                    {% endif %}
+                  </h3>
+                </div>
+              {% endif %}
+
+              {% if block.settings.content != blank %}
+                <div class="stat-text">{{ block.settings.content }}</div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Rich Text Block -->
+    {% for block in section.blocks %}
+      {% if block.type == 'rich_text' %}
+        {% if block.settings.content != blank %}
+          <div class="rich-text-wrapper" {{ block.shopify_attributes }}>
+            {{ block.settings.content }}
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+  </div>
+</section>
+
+<script>
+  // Lottery-style counter animation for stat numbers
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('.what-to-expect');
+    const counters = document.querySelectorAll('.stat-counter');
+
+    // Initialize counter structure immediately to reserve space
+    const initializeCounter = (counterElement) => {
+      const target = counterElement.getAttribute('data-counter');
+      const targetNumber = parseFloat(target);
+  
+      // Split target into individual digits
+      const targetStr = Math.floor(targetNumber).toString();
+      const digits = targetStr.split('');
+  
+      // Get existing suffix if present
+      const existingSuffix = counterElement.querySelector('.counter-suffix');
+  
+      // Build the counter structure with numbers arranged to roll from start to target
+      digits.forEach((digit, index) => {
+        const wrapper = document.createElement('span');
+        wrapper.className = 'counter-digit-wrapper';
+  
+        const digitContainer = document.createElement('span');
+        digitContainer.className = 'counter-digit-container';
+  
+        // Create multiple sequences of numbers (0-9) to support rotations
+        // Need 3 sequences to support 1.5 rotations (1.5 * 10 = 15 numbers + up to 9 for target)
+        const sequences = 3;
+        for (let seq = 0; seq < sequences; seq++) {
+          for (let i = 0; i < 10; i++) {
+            const span = document.createElement('span');
+            span.className = 'counter-number';
+            span.textContent = i;
+            digitContainer.appendChild(span);
+          }
+        }
+  
+        wrapper.appendChild(digitContainer);
+  
+        // Insert before suffix if it exists, otherwise just append
+        if (existingSuffix) {
+          counterElement.insertBefore(wrapper, existingSuffix);
+        } else {
+          counterElement.appendChild(wrapper);
+        }
+  
+        // Set initial state to show 0 (translateY(0))
+        digitContainer.style.transform = 'translateY(0)';
+        digitContainer.style.transition = 'none';
+      });
+  
+      // Force reflow to ensure structure is rendered
+      counterElement.offsetHeight;
+    };
+  
+    // Animate counter to target value
+    const animateCounter = (counterElement) => {
+      const target = counterElement.getAttribute('data-counter');
+      const targetNumber = parseFloat(target);
+
+      // Split target into individual digits
+      const targetStr = Math.floor(targetNumber).toString();
+      const digits = targetStr.split('');
+
+      // Get all digit containers
+      const digitContainers = counterElement.querySelectorAll('.counter-digit-container');
+
+      // Ensure we have the right number of containers
+      if (digitContainers.length !== digits.length) {
+        console.error('Mismatch:', digitContainers.length, 'containers vs', digits.length, 'digits');
+        return; // Skip if structure doesn't match
+      }
+
+      // Animate each digit to its target value with rotations
+      // Left side finishes first, right side finishes last for cascade effect
+      digitContainers.forEach((container, index) => {
+        const targetDigit = parseInt(digits[index]);
+        const totalDigits = digits.length;
+        const isRightSide = index >= totalDigits - 2; // Last 2 digits are "right side"
+
+        // Calculate rotations: lighter animation with fewer loops
+        const baseRotations = 1; // Just 1 full rotation for lighter feel
+        const extraRotations = isRightSide ? 0.5 : 0; // Half rotation extra for right-side
+        const totalRotations = baseRotations + extraRotations;
+
+        // Start lottery animation immediately
+        const delay = 0;
+
+        setTimeout(() => {
+          // With 3 sequences of [0-9], we have 30 total numbers (indices 0-29)
+          // Structure: [0,1,2,3,4,5,6,7,8,9, 0,1,2,3,4,5,6,7,8,9, 0,1,2,3,4,5,6,7,8,9]
+          //   Sequence: [     0 (first)     ,      1 (second)    ,      2 (third)     ]
+          const sequences = 3;
+          const numbersPerSequence = 10;
+          const totalNumbersInContainer = sequences * numbersPerSequence; // 30
+
+          // Calculate which sequence to land in after rotations
+          // 1 rotation = land in sequence 1 (second sequence)
+          // 1.5 rotations = land in sequence 2 (third sequence) - we need the ceiling
+          const whichSequence = Math.ceil(totalRotations);
+
+          // Calculate the exact index to land on
+          // We want to land on targetDigit within the destination sequence
+          // For 1 rotation + digit 9: sequence 1, index = 10 + 9 = 19
+          // For 1.5 rotations + digit 3: sequence 2, index = 20 + 3 = 23
+          const targetIndex = (whichSequence * numbersPerSequence) + targetDigit;
+
+          // Each number occupies (100% / 30) of the container height
+          const percentPerNumber = 100 / totalNumbersInContainer;
+          const translatePercent = targetIndex * percentPerNumber;
+          const translateValue = -translatePercent + '%';
+
+          // Faster base duration, progressive increase from left to right
+          const baseDuration = 1000;
+          const progressiveDelay = index * 150;
+          const duration = baseDuration + progressiveDelay;
+
+          // Ease-out-back: overshoots slightly then comes back to settle
+          // Using a gentler overshoot to avoid showing blank space
+          container.style.transition = `transform ${duration}ms cubic-bezier(0.34, 1.2, 0.64, 1)`;
+          container.style.transform = `translateY(${translateValue})`;
+        }, delay);
+      });
+    };
+  
+    // Initialize all counters immediately to reserve space
+    counters.forEach(counter => {
+      initializeCounter(counter);
+    });
+  
+    // Intersection Observer for animation on scroll - runs only once
+    // Triggers much earlier (before section is visible) for smooth entry
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+          entry.target.classList.add('animated');
+
+          // Animate all counters in the section
+          counters.forEach(counter => {
+            animateCounter(counter);
+          });
+
+          // Animate all icons in the section
+          const statItems = entry.target.querySelectorAll('.stat-item');
+          statItems.forEach(statItem => {
+            const icon = statItem.querySelector('.stat-icon');
+            if (icon) {
+              icon.classList.add('animated');
+            }
+          });
+
+          // Stop observing after animation starts (runs only once)
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0,
+      rootMargin: '100% 0px 0px 0px' // Trigger when section is 1 full viewport height before visible
+    });
+
+    // Observe the entire section instead of individual counters
+    if (section) {
+      observer.observe(section);
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "What to Expect",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section Padding (Desktop)"
+      },
+      {
+        "type": "range",
+        "id": "paddingtop",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "paddingbottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "paddingleft",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Left",
+        "default": 15
+      }, {
+        "type": "range",
+        "id": "paddingright",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Right",
+        "default": 15
+      }, {
+        "type": "header",
+        "content": "Section Padding (Mobile)"
+      }, {
+        "type": "range",
+        "id": "paddingtopmobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 40
+      }, {
+        "type": "range",
+        "id": "paddingbottommobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 40
+      }, {
+        "type": "range",
+        "id": "paddingleftmobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Left",
+        "default": 32
+      }, {
+        "type": "range",
+        "id": "paddingrightmobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Right",
+        "default": 32
+      }
+    ],
+    "blocks": [
+      {
+        "type": "title",
+        "name": "Title",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "What to Expect from BPC-Lx"
+          }, {
+            "type": "select",
+            "id": "alignment",
+            "label": "Alignment",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              }, {
+                "value": "center",
+                "label": "Center"
+              }, {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "left"
+          }
+        ]
+      }, {
+        "type": "stat",
+        "name": "Stat Block",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon (48x48px recommended)",
+            "info": "Leave empty for default placeholder icon"
+          }, {
+            "type": "text",
+            "id": "counter_number",
+            "label": "Counter Number",
+            "default": "93%",
+            "info": "e.g., '93%' or '500'. Will animate on scroll."
+          }, {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Add your stat description here.</p>"
+          }
+        ]
+      }, {
+        "type": "rich_text",
+        "name": "Rich Text",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Additional information or disclaimer text.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "What to Expect",
+        "blocks": [
+          {
+            "type": "title"
+          },
+          {
+            "type": "stat"
+          },
+          {
+            "type": "stat"
+          },
+          {
+            "type": "stat"
+          }, {
+            "type": "stat"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

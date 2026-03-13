@@ -1,0 +1,273 @@
+/* Collection FAQ Custom Layout Styles - Scoped to #collection-faq only */
+#collection-faq.learn-more-sec.custom-faq-layout .custom-accordion-list .outer-list.active .h5 {
+  font-weight: 700 !important;
+}
+
+/* First accordion item open by default in custom layout */
+#collection-faq.learn-more-sec.custom-faq-layout .custom-accordion-list > li:first-child.active .content {
+  display: block !important;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout {
+  background-color: #F1F3F4;
+  margin: 0;
+  padding-block: 64px;
+  padding-inline: 32px;
+}
+
+/* Responsive padding adjustments */
+@media screen and (max-width: 479px) {
+  #collection-faq.learn-more-sec.custom-faq-layout {
+    padding-block: 32px;
+    padding-inline: 16px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 959px) {
+  #collection-faq.learn-more-sec.custom-faq-layout {
+    padding-block: 48px;
+    padding-inline: 24px;
+  }
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout .metafield-rich_text_field {
+  max-width: 100%;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout h2.text-center {
+  max-width: 100% !important;
+  margin-bottom: 16px !important;
+  text-transform: none;
+  line-height: 40px;
+  font-size: 32px;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout section.pdp-tab-small.collection-faq-section {
+  padding-inline: 0;
+  margin-bottom: 0;
+}
+
+/* Preserve default spacing for non-custom layout or when custom layout is not active */
+#collection-faq.learn-more-sec:not(.custom-faq-layout) section.pdp-tab-small.collection-faq-section {
+  padding-inline: 10px;
+  margin-bottom: 60px;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout .pdp-tab-small__wrapper {
+  border: none;
+  border-radius: 0;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout .custom-accordion-list .outer-list {
+  cursor: pointer;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout .custom-accordion-list .outer-list .content,
+#collection-faq.learn-more-sec.custom-faq-layout .custom-accordion-list .outer-list .content > * {
+  line-height: 24px;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout ul.custom-accordion-list li:not(.content ul li) {
+  padding: 24px 40px 24px 0;
+  border-bottom: 1px solid #84827E;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout ul.custom-accordion-list li:not(.content ul li) > h3.h5 {
+  color: var(--txt-dark, #1A1B1B);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-transform: inherit;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout ul.custom-accordion-list li:not(.content ul li) > h3.h5:hover {
+  font-weight: normal;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout .pdp-tab-small__wrapper ul.accordian li .h5:after {
+  width: 16.5px;
+  height: 16.5px;
+  right: -40px !important;
+  background-size: 16.5px;
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 479px) {
+  #collection-faq.learn-more-sec.custom-faq-layout .pdp-tab-small__wrapper ul.accordian li {
+    padding-right: 35px;
+  }
+  
+  #collection-faq.learn-more-sec.custom-faq-layout .pdp-tab-small__wrapper ul.accordian li .h5:after {
+    right: -15px !important;
+  }
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout .faq-footer {
+  margin-top: 48px;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout .faq-footer .btn--primary {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  padding-block: 12px;
+  width: 100%;
+  height: 50px;
+  font-weight: 400;
+}
+
+/* Hide custom content column on mobile and tablet - only show on desktop */
+#collection-faq.learn-more-sec.custom-faq-layout .none-480 {
+  display: none !important;
+}
+
+/* hide-desktop-custom: Hidden by default, always left-aligned when visible */
+#collection-faq.learn-more-sec.custom-faq-layout .hide-desktop-custom {
+  display: none !important;
+}
+
+/* Always left-align these elements when they have hide-desktop-custom class */
+#collection-faq.learn-more-sec.custom-faq-layout h2.text-center.hide-desktop-custom {
+  text-align: left !important;
+}
+
+#collection-faq.learn-more-sec.custom-faq-layout .text-description.hide-desktop-custom {
+  text-align: left !important;
+}
+
+/* Show hide-desktop-custom elements on mobile and tablet */
+@media screen and (max-width: 959px) {
+  #collection-faq.learn-more-sec.custom-faq-layout .hide-desktop-custom {
+    display: block !important;
+  }
+}
+
+/* Desktop 2-column layout */
+@media screen and (min-width: 960px) {
+  #collection-faq.learn-more-sec.custom-faq-layout .faq-two-columns {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 56px;
+    align-items: start;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* Show and style custom-content-column with flex when visible on desktop */
+  #collection-faq.learn-more-sec.custom-faq-layout .custom-content-column.none-480 {
+    display: flex !important;
+    flex-direction: column;
+    grid-column: 1;
+    gap: 24px;
+    max-width: 482px;
+    position: sticky;
+    top: 120px;
+    align-self: start;
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .faq-questions-column {
+    grid-column: 2;
+  }
+
+  /* Custom column title */
+  #collection-faq.learn-more-sec.custom-faq-layout .custom-column-title {
+    color: var(--txt-dark, #1A1B1B);
+    font-size: 45px;
+    line-height: 52px;
+    margin: 0;
+    text-transform: none;
+    text-align: left;
+  }
+
+  /* Custom column text with icon */
+  #collection-faq.learn-more-sec.custom-faq-layout .custom-column-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .custom-text-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .custom-text-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .custom-text-content {
+    flex: 1;
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .custom-text-content p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: inherit;
+  }
+
+  /* Custom column buttons */
+  #collection-faq.learn-more-sec.custom-faq-layout .custom-column-button {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    padding-block: 14px;
+    width: 277px;
+    height: 50px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .custom-button-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: 0.6s ease all;
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .btn--secondary.custom-column-button {
+    border-color: var(--txt-dark, #1A1F29);
+    background-color: transparent;
+    color: var(--txt-dark, #1A1F29);
+    margin-top: -12px;
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .btn--secondary.custom-column-button:hover {
+    background-color: var(--txt-dark, #1a1b1b);
+    color: var(--txt-light, #FFF);
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .btn--secondary.custom-column-button:hover .custom-button-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .btn--secondary.custom-column-button .custom-button-icon {
+    filter: brightness(0) saturate(100%);
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout section.pdp-tab-small.collection-faq-section {
+    max-width: 100% !important;
+  }
+
+  #collection-faq.learn-more-sec.custom-faq-layout .faq-footer {
+    display: none;
+  }
+
+  /* Hide FAQ heading and description on desktop when custom layout is active */
+  #collection-faq.learn-more-sec.custom-faq-layout .hide-desktop-custom {
+    display: none !important;
+  }
+}
