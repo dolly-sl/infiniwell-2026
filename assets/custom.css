@@ -429,3 +429,6 @@ p#shopify-pc__banner__body-title {
   max-width: 800px;
 }
 
+.full-width-content.v2 .full-format li{
+  margin-bottom: 0 !important;
+}
