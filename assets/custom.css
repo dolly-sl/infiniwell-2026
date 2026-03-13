@@ -430,6 +430,10 @@ p#shopify-pc__banner__body-title {
 .full-width-content.v2 .content{
   max-width: 800px;
 }
+.full-width-content.v2 .full-format p{
+  padding-bottom: 0 !important;
+  padding-top: 15px !important;
+}
 
 .full-width-content.v2 .full-format li{
   margin-bottom: 0 !important;
