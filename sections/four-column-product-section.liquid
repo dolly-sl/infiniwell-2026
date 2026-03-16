@@ -1,20 +1,8 @@
-{%- style -%}
-  .section-{{ section.id }}-padding{
-      padding-top: {{ section.settings.paddingtop | round: 0 }}px !important;
-      padding-bottom: {{ section.settings.paddingbottom | round: 0 }}px !important;
-    }
 
-    @media screen and (max-width: 768px) {
-    .section-{{ section.id }}-padding{
-      padding-top: {{ section.settings.paddingtopmobile | round: 0 }}px !important;
-      padding-bottom: {{ section.settings.paddingbottomMobile | round: 0 }}px !important;
-    }
-  }
-{%- endstyle -%}
 
 
 {% if section.settings.collection != blank %}
-  <div class="four-column-product-section-v2    section-{{ section.id }}-padding {% if section.settings.hidehrline %}  hide-bottom-hr {% endif %} "  {% if section.settings.sectionID != blank %} id="{{ section.settings.sectionID }}"    {% endif %}>
+  <div class="four-column-product-section-v2    >
     <div class="container-1300">
     
           {% if section.settings.title != blank %}
