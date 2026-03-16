@@ -5,40 +5,69 @@
   {% assign protocol = protocol_type | default: '' | downcase %}
 
   {% if protocol != '' %}
+    {% assign protocol_variants = '' %}
     {% for v in productRelated.variants %}
       {% assign vt = v.title | downcase %}
       {% if protocol == 'basic' and vt contains 'basic' %}
-        {% assign selected_variant = v %}
-        {% break %}
+        {% assign protocol_variants = protocol_variants | append: v.id | append: ',' %}
       {% elsif protocol == 'advanced' and vt contains 'advanced' %}
-        {% assign selected_variant = v %}
-        {% break %}
+        {% assign protocol_variants = protocol_variants | append: v.id | append: ',' %}
       {% endif %}
     {% endfor %}
+
+    {% if protocol_variants != '' %}
+      {% assign chosen = '' %}
+      {% for v in productRelated.variants %}
+        {% assign vt = v.title | downcase %}
+        {% if vt contains 'trio' and protocol_variants contains v.id %}
+          {% assign chosen = v %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+      {% if chosen == '' %}
+        {% for v in productRelated.variants %}
+          {% assign vt = v.title | downcase %}
+          {% if protocol == 'basic' and vt contains 'basic' %}
+            {% assign chosen = v %}
+            {% break %}
+          {% elsif protocol == 'advanced' and vt contains 'advanced' %}
+            {% assign chosen = v %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if chosen != '' %}
+        {% assign selected_variant = chosen %}
+      {% endif %}
+    {% endif %}
   {% endif %}
 
   <div class="image-section">
     <a href="{{productRelated.url}}">
-      {% if productRelated.images.size > 1 %}
+      {% assign main_image = selected_variant.image | default: productRelated.images[0] %}
+      {% assign hover_image = productRelated.images[1] | default: main_image %}
+      {% if productRelated.images.size > 1 or selected_variant.image %}
         <img
           class="js__product-image-{{productRelated.id}} first-img"
-          data-src="{{  productRelated.images[0] | img_url: '558x558' }}"
-          src="{{  productRelated.images[0] | img_url: '558x558' }}"
+          data-src="{{  main_image | img_url: '558x558' }}"
+          src="{{  main_image | img_url: '558x558' }}"
           alt="{{ productRelated.featured_image.alt | escape }}"
           loading="lazy"
         >
         <img
           class="hover-img"
-          data-src="{{  productRelated.images[1] | img_url: '558x558' }}"
-          src="{{  productRelated.images[1] | img_url: '558x558' }}"
+          data-src="{{  hover_image | img_url: '558x558' }}"
+          src="{{  hover_image | img_url: '558x558' }}"
           alt="{{ productRelated.featured_image.alt | escape  }}"
           loading="lazy"
         >
       {% else %}
         <img
           class="js__product-image-{{productRelated.id}} first-img hover-img"
-          src="{{  productRelated.images[0] | img_url: '558x558' }}"
-          data-src="{{ productRelated.images[0] | img_url: '558x558' }}"
+          src="{{  main_image | img_url: '558x558' }}"
+          data-src="{{ main_image | img_url: '558x558' }}"
           alt="{{ productRelated.featured_image.alt | escape }}"
           loading="lazy"
         >
