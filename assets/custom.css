@@ -502,6 +502,11 @@ padding-bottom: 12px !important;
   padding: 0 0 16px;
   margin-bottom: 10px;
 }
+@media only screen and (max-width:480px){
+  .full-width-content-box .subtitle{
+    font-size: 14px !important;
+  }
+}
 .full-width-content-box .full-format p,
 .full-width-content-box .full-format li{
   font-size: 14px !important;
