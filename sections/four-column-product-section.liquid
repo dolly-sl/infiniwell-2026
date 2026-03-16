@@ -20,12 +20,12 @@
         {% endif %}
      
        
-         <ul class="product-list flex-wrap">
+        <ul class="product-list flex-wrap">
            {%- assign collection = collections[section.settings.collection] -%}
             {% for productRelated in collection.products %}
               {% if productRelated != blank %}
                 <li class="product-card">
-                  {% include 'product_card-collection' with productRelated: productRelated, variant_index: 0, show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
+                  {% include 'product_card-collection' with productRelated: productRelated, variant_index: 1, show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
                 </li>
               {% endif %}
             {% endfor %}
@@ -53,12 +53,12 @@
         {% endif %}
      
        
-         <ul class="product-list flex-wrap">
+        <ul class="product-list flex-wrap">
            {%- assign collection = collections[section.settings.collection] -%}
             {% for productRelated in collection.products %}
               {% if productRelated != blank %}
                 <li class="product-card">
-                  {% include 'product_card-collection' with productRelated: productRelated, variant_index: 1, show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
+                  {% include 'product_card-collection' with productRelated: productRelated, variant_index: 0, show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
                 </li>
               {% endif %}
             {% endfor %}
