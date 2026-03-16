@@ -436,7 +436,7 @@ p#shopify-pc__banner__body-title {
 .full-width-content.v2 h1{
   font-weight: 400 !important;
   padding-bottom: 8px !important;
-  line-height: normal;
+  line-height: normal !important;
 }
 .full-width-content.v2 h1 span{
   font-weight: 400 !important;
