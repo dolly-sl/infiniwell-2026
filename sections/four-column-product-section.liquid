@@ -2,6 +2,7 @@
 
 
 {% if section.settings.collection != blank %}
+<div>
   {% if section.settings.titleBasic != blank %}
   <div class="four-column-product-section-v2"    >
     <div class="container-1300">
@@ -36,6 +37,7 @@
     </div>
   </div>
 {% endif %}
+
  {% if section.settings.titleAdvanced != blank %}
   <div class="four-column-product-section-v2"    >
     <div class="container-1300">
@@ -70,6 +72,7 @@
     </div>
   </div>
 {% endif %}
+<div>
   {% if section.blocks.size > 0 %}
   {%- assign collection = collections[section.settings.collection] -%}
             {% for productRelated in collection.products %}
