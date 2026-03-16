@@ -529,7 +529,9 @@ position: initial;
 .four-column-product-section-v2{
   position: relative;
 }
-
+.four-column-product-section-v2 h2{
+  font-weight: 400 !important;
+}
 .four-column-product-section-v2 .product-list{
   width: calc(100% + 20px);
   margin-left: -20px;
