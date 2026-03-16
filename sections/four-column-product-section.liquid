@@ -61,41 +61,43 @@
 
 {% schema %}
 {
-  "name": "4 Col Product Section",
+  "name": "Four Column Product Grid",
   "tag": "section",
   "settings": [
     {
       "type": "header",
-      "content": "📦 Product Slider Content"
+      "content": "📦 Product grid content"
     },
     {
       "type": "paragraph",
-      "content": "Configure the header section that appears above the product slider. This slider displays up to 20 products in a responsive carousel layout (4 columns on desktop, 3 on tablet, 2 on large mobile, 1 on small mobile)."
+      "content": "Control the heading and description text that appear above this product grid. The section displays products from a single collection in a responsive four-column layout on desktop (automatically adapting to fewer columns on tablet and mobile)."
     },
    
     {
       "type": "text",
       "id": "title",
-      "label": "Section Title",
-      "info": "Enter the main heading for your product slider (e.g., 'Featured Products', 'You May Also Like', 'Complete Your Collection'). This title appears above the product carousel and provides context for the products displayed."
+      "label": "Section heading",
+      "info": "Main title shown above the product grid (for example: 'Featured Products', 'You May Also Like', or 'Complete Your Collection'). Keep it short and clear so customers immediately understand what these products represent."
     },
     {
       "type": "richtext",
       "id": "description",
-      "label": "Description"
+      "label": "Introductory description",
+      "info": "Optional rich text that appears under the heading. Use this to explain what is special about this collection, highlight benefits, or provide guidance on how to choose a product."
     },
      {
           "type": "collection",
           "id": "collection",
-          "label": "Collection"
+          "label": "Product collection source",
+          "info": "Select the collection whose products should appear in this grid. Products will be shown following the collection's sort order."
     },
     {
       "type": "header",
-      "content": "📏 Section Spacing & Layout"
+      "content": "📏 Section spacing & layout"
     },
     {
       "type": "paragraph",
-      "content": "Control the vertical spacing around the product slider to ensure proper visual separation from other page elements on both desktop and mobile devices."
+      "content": "Fine-tune the vertical spacing above and below this section for desktop and mobile. Adjust these values to create comfortable breathing room between this grid and neighboring sections."
     },
     {
       "type": "range",
@@ -104,8 +106,8 @@
       "max": 140,
       "step": 2,
       "unit": "px",
-      "label": "Top Spacing (Desktop)",
-      "info": "Adjust the space above the product slider on desktop devices. Use this to create proper visual separation from content above it.",
+      "label": "Top spacing (desktop)",
+      "info": "Controls the space above this section on desktop screens. Increase to push the grid further down from the content above; decrease for a more compact layout.",
       "default": 0
     },
     {
@@ -115,8 +117,8 @@
       "max": 100,
       "step": 2,
       "unit": "px",
-      "label": "Top Spacing (Mobile)",
-      "info": "Adjust the space above this section on mobile devices. Mobile spacing is typically smaller than desktop to optimize screen space.",
+      "label": "Top spacing (mobile)",
+      "info": "Controls the space above this section on mobile screens. Mobile spacing is usually tighter so important content remains visible without excessive scrolling.",
       "default": 0
     },
     {
@@ -126,8 +128,8 @@
       "max": 100,
       "step": 2,
       "unit": "px",
-      "label": "Bottom Spacing (Desktop)",
-      "info": "Adjust the space below the product slider on desktop devices. Use this to create proper visual separation from content below it.",
+      "label": "Bottom spacing (desktop)",
+      "info": "Controls the space below this section on desktop screens. Use this to clearly separate the grid from the next section that follows.",
       "default": 0
     },
     {
@@ -137,25 +139,26 @@
       "max": 100,
       "step": 2,
       "unit": "px",
-      "label": "Bottom Spacing (Mobile)",
-      "info": "Adjust the space below this section on mobile devices. Mobile spacing is typically smaller than desktop to optimize screen space.",
+      "label": "Bottom spacing (mobile)",
+      "info": "Controls the space below this section on mobile screens. Adjust to avoid the grid feeling either cramped or too far from the next section.",
       "default": 0
     },
     {
       "type": "header",
-      "content": "Dev Settings (For Theme Developers)"
+      "content": "🛠 Dev settings (for theme developers)"
     },
     {
           "type": "checkbox",
           "id": "hidehrline",
-          "label": "Hide Bottom HR Line",
+          "label": "Hide bottom divider line",
+          "info": "When enabled, hides the horizontal divider line that normally appears beneath this section. Useful when stacking multiple product sections together without visual breaks.",
           "default": false
     }
   ],
   "presets": [
     {
-      "name": "Four Column Product Section",
-      "category": "Product Showcase"
+      "name": "Four column product grid",
+      "category": "Product showcase"
     }
   ]
 }
