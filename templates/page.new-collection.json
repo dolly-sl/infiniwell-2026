@@ -41,33 +41,13 @@
         "descriptionBasic": "",
         "titleAdvanced": "",
         "descriptionAdvanced": "",
-        "collection": "protocols",
-        "paddingtop": 40,
-        "paddingtopmobile": 30,
-        "paddingbottom": 40,
-        "paddingbottomMobile": 30
-      }
-    },
-    "four_column_product_section_hNWYRm": {
-      "type": "four-column-product-section",
-      "name": "Four Column Product Section",
-      "settings": {
-        "titleBasic": "Basic Protocols",
-        "descriptionBasic": "<p><strong>Basic protocols </strong>are perfect for those starting their journey or prioritizing foundational support.</p>",
-        "titleAdvanced": "Advanced Protocols",
-        "descriptionAdvanced": "<p><strong>Advanced protocols</strong> elevate that support with higher potency, expanded ingredient sets, and targeted pathways — ideal for users who want stronger intervention and accelerated benefits.</p>",
-        "collection": "protocols",
-        "paddingtop": 40,
-        "paddingtopmobile": 30,
-        "paddingbottom": 40,
-        "paddingbottomMobile": 30
+        "collection": "protocols"
       }
     }
   },
   "order": [
     "full_width_content_v2_DqmMTg",
     "full_width_content_box_X6dQ3H",
-    "four_column_product_section_L7EHYa",
-    "four_column_product_section_hNWYRm"
+    "four_column_product_section_L7EHYa"
   ]
 }
