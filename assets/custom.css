@@ -440,7 +440,6 @@ p#shopify-pc__banner__body-title {
 }
 .full-width-content.v2 h1 span{
   font-weight: 400 !important;
-  font-size: 30px !important;
 }
 @media only screen and (max-width:480px){
   .full-width-content.v2 h1 span{
@@ -476,7 +475,7 @@ p#shopify-pc__banner__body-title {
 
 @media only screen and (max-width:768px){
   .full-width-content-box{
-  padding: 30px 0;
+  padding: 30px 0 0;
 }
 }
 

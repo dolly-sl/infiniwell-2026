@@ -53,41 +53,46 @@
 {% endif %}
 {% schema %}
 {
-  "name": "Full Width Content",
+  "name": "Full width content",
   "settings": [
     {
       "type": "header",
-      "content": "Content"
+      "content": "📝 Content settings"
     },
     {
       "type": "text",
       "id": "title1",
-      "label": "Title (Black)"
+      "label": "Main heading (black)",
+      "info": "Primary part of the heading, displayed in black. Use a short, clear phrase that introduces the main message of this section."
     },
     {
       "type": "text",
       "id": "title2",
-      "label": "Title (Grey)"
+      "label": "Accent heading (grey)",
+      "info": "Optional second part of the heading, displayed in grey next to the main heading. Ideal for highlighting a keyword or complementary phrase."
     },
     {
       "type": "richtext",
       "id": "description",
-      "label": "Description"
+      "label": "Body content",
+      "info": "Rich text content shown underneath the heading. Use this area for detailed copy, storytelling, or explanations. You can include formatting, links, and lists."
     },
     {
       "type": "text",
       "id": "buttonText",
-      "label": "Button Text"
+      "label": "Button text",
+      "info": "Text displayed inside the call-to-action button (for example: 'Learn more', 'Shop now', or 'Read story'). Leave blank to hide the button."
     },
     {
       "type": "url",
       "id": "buttonLink",
-      "label": "Button Link"
+      "label": "Button link",
+      "info": "Destination URL for the call-to-action button. Paste a full link or select a page so customers know where they will be taken when they click."
     },
     {
       "type": "header",
-      "content": "Extra Settings",
-      "info": "Recommened to be used by the developer only"
+      "content": "📏 Section spacing (advanced)",
+      "info": "Controls the vertical spacing above and below this section. These options are primarily intended for theme developers or advanced users fine-tuning layout."
     },
     {
       "type": "range",
@@ -96,7 +101,8 @@
       "max": 140,
       "step": 2,
       "unit": "px",
-      "label": "Padding top (Desktop)",
+      "label": "Top spacing (desktop)",
+      "info": "Space above this section on desktop screens. Increase to push the block further down from the content above; decrease for a more compact layout.",
       "default": 90
     },
     {
@@ -106,7 +112,8 @@
       "max": 100,
       "step": 2,
       "unit": "px",
-      "label": "Padding top (Mobile)",
+      "label": "Top spacing (mobile)",
+      "info": "Space above this section on mobile screens. Mobile spacing is usually tighter so important content remains visible without excessive scrolling.",
       "default": 80
     },
     {
@@ -116,7 +123,8 @@
       "max": 100,
       "step": 2,
       "unit": "px",
-      "label": "Padding Bottom (Desktop)",
+      "label": "Bottom spacing (desktop)",
+      "info": "Space below this section on desktop screens. Use this to clearly separate it from the next section that follows.",
       "default": 0
     },
     {
@@ -126,14 +134,15 @@
       "max": 100,
       "step": 2,
       "unit": "px",
-      "label": "Padding Bottom (Mobile)",
+      "label": "Bottom spacing (mobile)",
+      "info": "Space below this section on mobile screens. Adjust to avoid the content feeling either cramped or too far from the next section.",
       "default": 0
     }
   ],
 
   "presets": [
     {
-      "name": "Full Width Content"
+      "name": "Full width content"
     }
   ]
 }
