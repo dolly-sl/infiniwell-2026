@@ -50,33 +50,36 @@
 {% endif %}
 {% schema %}
 {
-  "name": "Full Width Content Box",
+  "name": "Full width content box",
   "settings": [
     {
       "type": "header",
-      "content": "Content"
+      "content": "📝 Content settings"
     },
     {
       "type": "text",
       "id": "title",
-      "label": "Title"
+      "label": "Main heading",
+      "info": "Primary title displayed at the top of the content box. Use a clear, concise phrase that describes the message of this section."
     },
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Subtitle"
+      "label": "Supporting subtitle",
+      "info": "Optional line of text that appears below the main heading. Use this to add a short clarification, highlight a key benefit, or set context."
     },
     {
       "type": "richtext",
       "id": "description",
-      "label": "Description"
+      "label": "Body content",
+      "info": "Rich text content shown beneath the heading and subtitle. You can include formatted text, links, and lists to explain details, tell a story, or provide instructions."
     }
     
   ],
 
   "presets": [
     {
-      "name": "Full Width Content Box"
+      "name": "Full width content box"
     }
   ]
 }
