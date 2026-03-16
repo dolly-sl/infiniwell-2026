@@ -565,11 +565,13 @@ position: initial;
   margin-top: 24px;
   
 }
+
+}
+
 @media only screen and (max-width:480px){
  .four-column-product-section-v2 .description *{
   font-family: 14px !important;
  }
-}
 }
 
 
