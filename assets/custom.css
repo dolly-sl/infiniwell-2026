@@ -570,7 +570,7 @@ position: initial;
 
 @media only screen and (max-width:480px){
  .four-column-product-section-v2 .description *{
-  font-family: 14px !important;
+  font-size: 14px !important;
  }
 }
 
