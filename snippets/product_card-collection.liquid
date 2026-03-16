@@ -1,6 +1,22 @@
 <div
   class="product-wrapper {{ class }}"
 >
+  {% assign selected_variant = productRelated.variants[0] %}
+  {% assign protocol = protocol_type | default: '' | downcase %}
+
+  {% if protocol != '' %}
+    {% for v in productRelated.variants %}
+      {% assign vt = v.title | downcase %}
+      {% if protocol == 'basic' and vt contains 'basic' %}
+        {% assign selected_variant = v %}
+        {% break %}
+      {% elsif protocol == 'advanced' and vt contains 'advanced' %}
+        {% assign selected_variant = v %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
   <div class="image-section">
     <a href="{{productRelated.url}}">
       {% if productRelated.images.size > 1 %}
@@ -47,8 +63,6 @@
         class="swym-button swym-add-to-wishlist-view-product product_{{productRelated.id}}"
         data-swaction="addToWishlist"
         data-product-id="{{productRelated.id | json}}"
-        {% assign vi = variant_index | default: 0 %}
-        {% assign selected_variant = productRelated.variants[vi] %}
         data-variant-id="{{ selected_variant.id }}"
         data-product-url="{{ shop.url }}{{ productRelated.url }}"
       >
