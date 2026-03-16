@@ -594,18 +594,12 @@ position: initial;
 }
 }
 .four-column-product-section-v2{
-  padding: 0px 0 40px;
+  padding: 40px 0px;
 }
 
-.four-column-product-section-v2:first-child{
-  padding: 40px 0;
-}
 
 @media only screen and (max-width:768px){
   .four-column-product-section-v2{
-  padding: 0 0 30px;
-  }
-  .four-column-product-section-v2:first-child{
   padding: 30px 0;
 }
 }
