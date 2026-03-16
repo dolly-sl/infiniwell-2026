@@ -27,7 +27,7 @@
 
               {% if productRelated != blank %}
                 <li class="product-card">
-                  {% include 'product_card'  with  productRelated: productRelated , show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
+                  {% include 'product_card-collection'  with  productRelated: productRelated , show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
           </li>
               {% endif %}
             {% endfor %}
@@ -62,7 +62,7 @@
 
               {% if productRelated != blank %}
                 <li class="product-card">
-                  {% include 'product_card'  with  productRelated: productRelated , show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
+                  {% include 'product_card-collection'  with  productRelated: productRelated , show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
           </li>
               {% endif %}
             {% endfor %}
