@@ -2,17 +2,18 @@
 
 
 {% if section.settings.collection != blank %}
-  <div class="four-column-product-section-v2    >
+  {% if section.settings.titleBasic != blank %}
+  <div class="four-column-product-section-v2"    >
     <div class="container-1300">
     
-          {% if section.settings.title != blank %}
+          
             <h2 class="h2">
-              {{ section.settings.title }}
+              {{ section.settings.titleBasic }}
             </h2>
-          {% endif %}
-           {% if section.settings.description != blank %}
+          
+           {% if section.settings.descriptionBasic != blank %}
            <div class="description">
-        {{ section.settings.description }}
+        {{ section.settings.descriptionBasic }}
 
        </div>
         {% endif %}
@@ -34,7 +35,41 @@
       
     </div>
   </div>
+{% endif %}
+ {% if section.settings.titleAdvanced != blank %}
+  <div class="four-column-product-section-v2"    >
+    <div class="container-1300">
+    
+          
+            <h2 class="h2">
+              {{ section.settings.titleAdvanced }}
+            </h2>
+          
+           {% if section.settings.descriptionAdvanced != blank %}
+           <div class="description">
+        {{ section.settings.descriptionAdvanced }}
 
+       </div>
+        {% endif %}
+     
+       
+          <ul class="product-list flex-wrap">
+           {%- assign collection = collections[section.settings.collection] -%}
+            {% for productRelated in collection.products %}
+             
+
+              {% if productRelated != blank %}
+                <li class="product-card">
+                  {% include 'product_card'  with  productRelated: productRelated , show_price: true, show_tags: true, show_auto_tags: true, show_title: true, show_fav: false, show_secondary_button: false %}
+          </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+       
+      
+    </div>
+  </div>
+{% endif %}
   {% if section.blocks.size > 0 %}
   {%- assign collection = collections[section.settings.collection] -%}
             {% for productRelated in collection.products %}
