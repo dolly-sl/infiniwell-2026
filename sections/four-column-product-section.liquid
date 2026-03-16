@@ -73,12 +73,11 @@
   </div>
 {% endif %}
 <div>
-  {% if section.blocks.size > 0 %}
+  
   {%- assign collection = collections[section.settings.collection] -%}
             {% for productRelated in collection.products %}
     {% render 'product-modal', productData: productRelated %}
   {% endfor %}
-{% endif %}
 
     
 {%- endif -%}
