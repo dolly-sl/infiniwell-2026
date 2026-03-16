@@ -430,15 +430,28 @@ p#shopify-pc__banner__body-title {
 }
 @media only screen and (max-width:768px){
   .full-width-content.v2{
-  padding: 30px 0 !important;
+  padding: 17px 0 30px !important;
 }
 }
 .full-width-content.v2 h1{
   font-weight: 400 !important;
   padding-bottom: 8px !important;
+  line-height: normal !important;
 }
 .full-width-content.v2 h1 span{
   font-weight: 400 !important;
+  font-size: 30px !important;
+}
+@media only screen and (max-width:480px){
+  .full-width-content.v2 h1 span{
+  font-size: 30px !important;
+}
+.full-width-content.v2 h1{
+  padding-bottom: 0 !important;
+}
+.full-width-content.v2 .full-format p,.full-width-content.v2 .full-format li{
+  font-size: 14px !important;
+}
 }
 .full-width-content.v2 .content{
   max-width: 800px;
@@ -470,6 +483,7 @@ p#shopify-pc__banner__body-title {
 .full-width-content-box h2{
   font-weight: 400 !important;
   margin-bottom: 5px !important;
+  line-height: normal !important;
 }
 
 .full-width-content-box .box{
@@ -490,6 +504,11 @@ padding-bottom: 12px !important;
   border-bottom: 1px solid #E7D9CB;
   padding: 0 0 16px;
   margin-bottom: 10px;
+}
+@media only screen and (max-width:480px){
+  .full-width-content-box .subtitle{
+    font-size: 14px !important;
+  }
 }
 .full-width-content-box .full-format p,
 .full-width-content-box .full-format li{
@@ -529,7 +548,9 @@ position: initial;
 .four-column-product-section-v2{
   position: relative;
 }
-
+.four-column-product-section-v2 h2{
+  font-weight: 400 !important;
+}
 .four-column-product-section-v2 .product-list{
   width: calc(100% + 20px);
   margin-left: -20px;
@@ -544,6 +565,13 @@ position: initial;
   margin-top: 24px;
   
 }
+
+}
+
+@media only screen and (max-width:480px){
+ .four-column-product-section-v2 .description *{
+  font-size: 14px !important;
+ }
 }
 
 
