@@ -430,7 +430,7 @@ p#shopify-pc__banner__body-title {
 }
 @media only screen and (max-width:768px){
   .full-width-content.v2{
-  padding: 30px 0 !important;
+  padding: 17px 0 30px !important;
 }
 }
 .full-width-content.v2 h1{
