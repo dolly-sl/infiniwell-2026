@@ -643,3 +643,9 @@ position: initial;
    .four-column-product-slider .inner .swiper-slide .content, .full-width-content-section.collection-page:last-child {
     padding-bottom: 0px !important;
 }
+
+.four-column-product-slider .inner .swiper-slide{
+  padding-left: 0 !important;
+  margin-left: 20px !important;
+  margin-bottom: 60px !important;
+}
