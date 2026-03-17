@@ -625,6 +625,7 @@ position: initial;
 .product-card{
   position: relative;
   padding-bottom: 95px;
+      height: auto !important;
 
 }
  .product-card .btn--primary, .product-card .productCard__quickviewLink {
