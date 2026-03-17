@@ -632,3 +632,6 @@ position: initial;
      bottom: 0;
      left: 0;
   }
+   .product-card .btn--primary{
+    bottom: 35px;
+   }
