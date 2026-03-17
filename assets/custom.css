@@ -628,10 +628,10 @@ position: initial;
 
 }
  .product-card .btn--primary, .product-card .productCard__quickviewLink {
-     position: absolute;
-     bottom: 0;
-     left: 0;
+     position: absolute !important;
+     bottom: 0 !important;
+     left: 0 !important;
   }
    .product-card .btn--primary{
-    bottom: 35px;
+    bottom: 35px !important;
    }
