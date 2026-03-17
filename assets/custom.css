@@ -628,6 +628,9 @@ position: initial;
       height: auto !important;
 
 }
+.collection__product-list .product-card{
+  padding-bottom: 95px !important;
+}
  .product-card .btn--primary, .product-card .productCard__quickviewLink {
      position: absolute !important;
      bottom: 0 !important;
