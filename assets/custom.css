@@ -638,3 +638,8 @@ position: initial;
    .product-card .btn--primary{
     bottom: 35px !important;
    }
+
+
+   .four-column-product-slider .inner .swiper-slide .content, .full-width-content-section.collection-page:last-child {
+    padding-bottom: 0px !important;
+}
