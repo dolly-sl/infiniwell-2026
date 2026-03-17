@@ -626,7 +626,7 @@ position: initial;
   position: relative;
 
 }
- .product-card .btn--primary{
+ .product-card .btn--primary, .product-card .productCard__quickviewLink {
      position: absolute;
      bottom: 0;
      left: 0;
