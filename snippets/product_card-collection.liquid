@@ -1,0 +1,155 @@
+<div
+  class="product-wrapper {{ class }}"
+>
+  {% assign selected_variant = productRelated.variants[0] %}
+  {% assign protocol = protocol_type | default: '' | downcase %}
+
+  {% if protocol != '' %}
+    {% assign protocol_variants = '' %}
+    {% for v in productRelated.variants %}
+      {% assign vt = v.title | downcase %}
+      {% if protocol == 'basic' and vt contains 'basic' %}
+        {% assign protocol_variants = protocol_variants | append: v.id | append: ',' %}
+      {% elsif protocol == 'advanced' and vt contains 'advanced' %}
+        {% assign protocol_variants = protocol_variants | append: v.id | append: ',' %}
+      {% endif %}
+    {% endfor %}
+
+    {% if protocol_variants != '' %}
+      {% assign chosen = '' %}
+      {% for v in productRelated.variants %}
+        {% assign vt = v.title | downcase %}
+        {% if vt contains 'trio' and protocol_variants contains v.id %}
+          {% assign chosen = v %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+      {% if chosen == '' %}
+        {% for v in productRelated.variants %}
+          {% assign vt = v.title | downcase %}
+          {% if protocol == 'basic' and vt contains 'basic' %}
+            {% assign chosen = v %}
+            {% break %}
+          {% elsif protocol == 'advanced' and vt contains 'advanced' %}
+            {% assign chosen = v %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if chosen != '' %}
+        {% assign selected_variant = chosen %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  <div class="image-section">
+    <a href="{{productRelated.url}}">
+      {% assign main_image = selected_variant.image | default: productRelated.images[0] %}
+      {% assign hover_image = productRelated.images[1] | default: main_image %}
+      {% if productRelated.images.size > 1 or selected_variant.image %}
+        <img
+          class="js__product-image-{{productRelated.id}} first-img"
+          data-src="{{  main_image | img_url: '558x558' }}"
+          src="{{  main_image | img_url: '558x558' }}"
+          alt="{{ productRelated.featured_image.alt | escape }}"
+          loading="lazy"
+        >
+        <img
+          class="hover-img"
+          data-src="{{  hover_image | img_url: '558x558' }}"
+          src="{{  hover_image | img_url: '558x558' }}"
+          alt="{{ productRelated.featured_image.alt | escape  }}"
+          loading="lazy"
+        >
+      {% else %}
+        <img
+          class="js__product-image-{{productRelated.id}} first-img hover-img"
+          src="{{  main_image | img_url: '558x558' }}"
+          data-src="{{ main_image | img_url: '558x558' }}"
+          alt="{{ productRelated.featured_image.alt | escape }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </a>
+
+    <!-- Custom Tags -->
+    {% if show_tags %}
+      <span class="product-card__tags-status">
+        {% include 'product_tags' with productRelated %}
+
+        {% if productRelated.compare_at_price > productRelated.price %}
+          <span class="tag sale">Sale</span>
+        {% endif %}
+      </span>
+    {% endif %}
+
+    {% unless hide_star %}
+    <!-- Swym Wishlist Plus EPI Button -->
+      <button
+        data-with-epi="true"
+        class="swym-button swym-add-to-wishlist-view-product product_{{productRelated.id}}"
+        data-swaction="addToWishlist"
+        data-product-id="{{productRelated.id | json}}"
+        data-variant-id="{{ selected_variant.id }}"
+        data-product-url="{{ shop.url }}{{ productRelated.url }}"
+      >
+        {% include 'icon-star' -%}
+        {%- include 'icon-star-filled' %}
+      </button>
+    {% endunless %}
+  </div>
+
+  <div class="content">
+    {% if show_title %}
+      <p class="h5 product-card__product-title uppercase">
+        <a href="{{productRelated.url}}">
+          {% if productRelated.metafields.productInfo.product_name != blank %}
+            {{ productRelated.metafields.prodctInfo.product_name }}
+          {% else %}
+            {{ productRelated.title }}
+          {% endif %}
+        </a>
+      </p>
+    {% endif %}
+    {% if productRelated.metafields.product.short_description != blank %}
+      <span class="sub-title">{{ productRelated.metafields.product.short_description }}</span>
+    {% endif %}
+    <a href="{{productRelated.url }}">
+      {% render 'okendo-reviews-product-rating-summary', product: productRelated %}
+    </a>
+    <!-- Price -->
+    {% if show_price %}
+      <span class="product-card__price flex">
+        <span>{{ selected_variant.price | money }}</span>
+        {% if selected_variant.compare_at_price > selected_variant.price %}
+          <s>
+            {{ selected_variant.compare_at_price | money }}
+          </s>
+        {% endif %}
+      </span>
+    {% endif %}
+
+    <button class="productCard__buy btn--primary{% unless selected_variant.available %} productCard__buy--oos{% endunless %}"
+    data-prod="{{ selected_variant.id }}" data-plan='{{ productRelated.selling_plan_groups[0].selling_plans[0].id }}'>
+        {% if selected_variant.available %}
+        Add to Cart
+        {% else %}
+        Out of Stock
+        {% endif %}
+    </button>
+
+    <a
+      class="productCard__quickviewLink js__quick-view-click"
+      href="javascript:;"
+      title="Shop {{productRelated.title}}"
+      data-id="{{productRelated.id}}"
+      data-slider_main="{%- for img in productRelated.images -%}{{- img | img_url: '710x710' -}}|{%- endfor -%}"
+      data-slider_thumb="{%- for img in productRelated.images -%}{{- img | img_url: '150x150' -}}|{%- endfor -%}"
+      data-var_images="{%- for var in productRelated.variants -%}{{- var.image | img_url: '150x150' -}}|{%- endfor -%}"
+      >
+        Quick View
+      </a>
+  </div>
+</div>
